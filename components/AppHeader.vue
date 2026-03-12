@@ -1,7 +1,6 @@
 <template>
     <header id="navbar" class="w-full hidden lg:flex flex-col">
       <nav class="w-full flex justify-between border-bot">
-        <github-corner url="https://github.com/alexdeploy/developer-portfolio-v2" />
           <div class="flex">
             <NuxtLink id="nav-logo" to="/">
               {{ config.logo_name }}
@@ -18,12 +17,15 @@
             <NuxtLink id="nav-link" to="/projects" :class="{ active: isActive('/projects') }">
               _projects
             </NuxtLink>
+
+            <NuxtLink id="nav-link" to="/blog" :class="{ active: isActive('/blog') }">
+              _blog
+            </NuxtLink>
           </div>
 
           <NuxtLink id="nav-link-contact" to="/contact-me" :class="{ active: isActive('/contact-me')}">
             _contact-me
           </NuxtLink>
-      
       </nav>
 
     </header>

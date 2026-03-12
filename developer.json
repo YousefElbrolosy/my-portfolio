@@ -1,7 +1,7 @@
 {
-    "name": "Micheal Weaver",
-    "logo_name": "micheal-weaver",
-    "role": "Front-end developer",
+    "name": "Yousef Elbrolosy",
+    "logo_name": "yousef-elbrolosy",
+    "role": "Software Engineer",
     "about": {
         "sections": {
             "professional-info": {
@@ -64,25 +64,20 @@
         "direct": {
             "title": "contacts",
             "sources": {
-                "email": "user@gmail.com",
-                "phone": "+3598246359"
+                "email": "yousefelbrolosy8@gmail.com",
+                "phone": "+20 101 077 7507"
             }
         },
         "social": {
             "github": {
                 "title": "Github profile",
                 "url": "https://github.com/",
-                "user": "username"
+                "user": "YousefElbrolosy"
             },
-            "facebook": {
-                "title": "Facebook profile",
-                "url": "https://facebook.com/",
-                "user": "username"
-            },
-            "twitter": {
-                "title": "Twitter account",
-                "url": "https://twitter.com/",
-                "user": "username"
+            "linkedin": {
+                "title": "LinkedIn profile",
+                "url": "https://www.linkedin.com/in/yousefelbrolosy/",
+                "user": "yousefelbrolosy"
             }
         },
         "find_me_also_in": {
@@ -114,6 +109,124 @@
     "gists": {
         "1": "83861a67e377633ee8368df01ee3a355",
         "2": "694c1f32332788a2ac7f37b09e5aa40e"
+    },
+    "spotlights": {
+        "1": {
+            "title": "_ui-animations",
+            "tagline": "Bringing interfaces to life",
+            "description": "A collection of fluid UI animations and micro-interactions built with Flutter, showcasing smooth transitions, gesture-driven animations, and performant rendering techniques.",
+            "img": "/images/projects/ui-animations2.png",
+            "images": ["/images/projects/ui-animations2.png", "/images/projects/ui-animations.png"],
+            "tech": ["Flutter"],
+            "url": "https://github.com/",
+            "gistId": "83861a67e377633ee8368df01ee3a355",
+            "blogSlug": "ui-animations-system-design"
+        },
+        "2": {
+            "title": "_ethereum",
+            "tagline": "Decentralized application architecture",
+            "description": "A Vue-based decentralized application interfacing with Ethereum smart contracts, featuring wallet integration, transaction management, and real-time blockchain state synchronization.",
+            "img": "/images/projects/ethereum.png",
+            "images": ["/images/projects/ethereum.png"],
+            "tech": ["Vue"],
+            "url": "https://github.com/",
+            "gistId": "694c1f32332788a2ac7f37b09e5aa40e",
+            "blogSlug": "ethereum-dapp-system-design"
+        },
+        "3": {
+            "title": "_ai-resources",
+            "tagline": "Curated knowledge for AI practitioners",
+            "description": "A Gatsby-powered platform aggregating AI and machine learning resources, featuring static generation, markdown-driven content, and intelligent search and filtering.",
+            "img": "/images/projects/ai-resources.png",
+            "images": ["/images/projects/ai-resources.png"],
+            "tech": ["Gatsby"],
+            "url": "https://github.com/",
+            "gistId": "83861a67e377633ee8368df01ee3a355",
+            "blogSlug": "ai-resources-system-design"
+        }
+    },
+    "blog": {
+        "ui-animations-system-design": {
+            "title": "System Design: UI Animations",
+            "date": "2026-03-01",
+            "tags": ["flutter", "animations", "ui-design"],
+            "heroImage": "/images/projects/ui-animations2.png",
+            "excerpt": "Deep dive into architecture decisions behind building performant, gesture-driven UI animations with Flutter.",
+            "sections": [
+                {
+                    "heading": "Architecture Overview",
+                    "content": "<p>The animation system is built on Flutter's compositing layer, leveraging implicit and explicit animations for different use cases. The architecture separates animation logic from widget trees using AnimationController instances managed at the state level.</p><p>Each animation sequence is defined as a composable unit that can be chained, reversed, and combined with other sequences through a custom animation orchestrator.</p>",
+                    "image": "/images/projects/ui-animations2.png",
+                    "imageCaption": "Animation system component diagram"
+                },
+                {
+                    "heading": "Performance Considerations",
+                    "content": "<p>Maintaining 60fps during complex animation sequences required careful management of the render pipeline. We use RepaintBoundary widgets to isolate animated subtrees and prevent unnecessary repaints of static content.</p><p>The animation controller pool pattern ensures that multiple concurrent animations share resources efficiently without causing frame drops.</p>",
+                    "image": "/images/projects/ui-animations.png",
+                    "imageCaption": "Performance profiling results"
+                },
+                {
+                    "heading": "Gesture Integration",
+                    "content": "<p>User gestures drive animations through a velocity-aware system that translates pointer events into animation parameters. The gesture recognizer feeds into a physics-based simulation (SpringSimulation) that creates natural-feeling responses to user input.</p>",
+                    "image": null,
+                    "imageCaption": null
+                }
+            ]
+        },
+        "ethereum-dapp-system-design": {
+            "title": "System Design: Ethereum DApp",
+            "date": "2026-02-15",
+            "tags": ["vue", "ethereum", "web3", "blockchain"],
+            "heroImage": "/images/projects/ethereum.png",
+            "excerpt": "How we architected a Vue-based decentralized application with smart contract integration and real-time blockchain state management.",
+            "sections": [
+                {
+                    "heading": "Architecture Overview",
+                    "content": "<p>The DApp follows a layered architecture: Vue frontend communicates with an abstraction layer that wraps Web3.js calls, which in turn interact with deployed Solidity smart contracts on the Ethereum network.</p><p>State management uses Vuex stores synchronized with on-chain data through event listeners and polling mechanisms for pending transactions.</p>",
+                    "image": "/images/projects/ethereum.png",
+                    "imageCaption": "DApp architecture layers"
+                },
+                {
+                    "heading": "Smart Contract Integration",
+                    "content": "<p>Contract interactions are managed through a service layer that handles ABI encoding, gas estimation, and transaction lifecycle management. Each contract method is wrapped in a typed interface providing compile-time safety and runtime validation.</p><p>Error handling covers common blockchain failure modes: reverted transactions, nonce conflicts, and network congestion with automatic retry logic.</p>",
+                    "image": null,
+                    "imageCaption": null
+                },
+                {
+                    "heading": "Wallet and Authentication",
+                    "content": "<p>Authentication is handled through MetaMask wallet connection, with a custom provider abstraction supporting multiple wallet types. The session management system tracks connection state and handles network switching gracefully.</p>",
+                    "image": null,
+                    "imageCaption": null
+                }
+            ]
+        },
+        "ai-resources-system-design": {
+            "title": "System Design: AI Resources Platform",
+            "date": "2026-01-20",
+            "tags": ["gatsby", "graphql", "static-generation"],
+            "heroImage": "/images/projects/ai-resources.png",
+            "excerpt": "Building a high-performance static site with Gatsby for AI resource aggregation, featuring GraphQL-driven content and smart search.",
+            "sections": [
+                {
+                    "heading": "Architecture Overview",
+                    "content": "<p>The platform leverages Gatsby's static site generation pipeline to pre-render all resource pages at build time. Content is sourced through a GraphQL data layer that aggregates markdown files, external APIs, and structured JSON datasets.</p><p>The build pipeline processes and optimizes all images, generates responsive image sets, and creates the search index used by the client-side search feature.</p>",
+                    "image": "/images/projects/ai-resources.png",
+                    "imageCaption": "Static generation pipeline"
+                },
+                {
+                    "heading": "Search and Filtering",
+                    "content": "<p>Client-side search is powered by a pre-built search index generated during the Gatsby build step. The index uses an inverted document frequency model for relevance ranking, keeping the search experience fast without requiring a backend server.</p><p>Filtering combines tag-based taxonomy with full-text search, allowing users to narrow results by category, difficulty level, and content type simultaneously.</p>",
+                    "image": null,
+                    "imageCaption": null
+                },
+                {
+                    "heading": "Content Pipeline",
+                    "content": "<p>Resources are authored in markdown with frontmatter metadata. A custom Gatsby plugin validates content structure at build time, ensuring all required fields are present and links are valid before deployment.</p>",
+                    "image": null,
+                    "imageCaption": null
+                }
+            ]
+        }
     },
     "projects": {
         "1": {

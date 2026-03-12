@@ -28,6 +28,11 @@
         _projects
       </NuxtLink>
 
+      <NuxtLink id="nav-link-mobile" to="/blog" :class="{ active: isActive('/blog') }"
+        @click="toggleMobileMenu()">
+        _blog
+      </NuxtLink>
+
       <NuxtLink id="nav-link-mobile" to="/contact-me" :class="{ active: isActive('/contact-me') }"
         @click="toggleMobileMenu()">
         _contact-me
