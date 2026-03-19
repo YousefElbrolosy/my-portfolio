@@ -111,121 +111,56 @@
         }
     },
     "gists": {
-        "1": "83861a67e377633ee8368df01ee3a355",
-        "2": "694c1f32332788a2ac7f37b09e5aa40e"
+        "feedback-grape": "f75cb279e967c8b142a38cab033dfa34"
     },
     "spotlights": {
         "1": {
-            "title": "_ui-animations",
-            "tagline": "Bringing interfaces to life",
-            "description": "A collection of fluid UI animations and micro-interactions built with Flutter, showcasing smooth transitions, gesture-driven animations, and performant rendering techniques.",
-            "img": "/images/projects/ui-animations2.png",
-            "images": ["/images/projects/ui-animations2.png", "/images/projects/ui-animations.png"],
-            "tech": ["Flutter"],
-            "url": "https://github.com/",
-            "gistId": "83861a67e377633ee8368df01ee3a355",
-            "blogSlug": "ui-animations-system-design"
-        },
-        "2": {
-            "title": "_ethereum",
-            "tagline": "Decentralized application architecture",
-            "description": "A Vue-based decentralized application interfacing with Ethereum smart contracts, featuring wallet integration, transaction management, and real-time blockchain state synchronization.",
-            "img": "/images/projects/ethereum.png",
-            "images": ["/images/projects/ethereum.png"],
-            "tech": ["Vue"],
-            "url": "https://github.com/",
-            "gistId": "694c1f32332788a2ac7f37b09e5aa40e",
-            "blogSlug": "ethereum-dapp-system-design"
-        },
-        "3": {
-            "title": "_ai-resources",
-            "tagline": "Curated knowledge for AI practitioners",
-            "description": "A Gatsby-powered platform aggregating AI and machine learning resources, featuring static generation, markdown-driven content, and intelligent search and filtering.",
-            "img": "/images/projects/ai-resources.png",
-            "images": ["/images/projects/ai-resources.png"],
-            "tech": ["Gatsby"],
-            "url": "https://github.com/",
-            "gistId": "83861a67e377633ee8368df01ee3a355",
-            "blogSlug": "ai-resources-system-design"
+            "title": "My Bachelor Project: Feedback GRAPE",
+            "tagline": "Machine Learning Based Optimal Quantum Control",
+            "description": "Optimal Quantum Control aims to find and engineer the optimal control pulses that drive a quantum system from an initial state to a target state, and fields such as quantum computing rely heavily on quantum control techniques to do operations on qubits and control their behavior.",
+            "img": "/images/projects/feedback-grape/feedback.png",
+            "images": ["/images/projects/feedback-grape/feedback.png", "/images/projects/feedback-grape/feedback.png"],
+            "tech": ["JAX"],
+            "url": "https://github.com/YousefElbrolosy/feedback-grape",
+            "gistId": "f75cb279e967c8b142a38cab033dfa34",
+            "blogSlug": "feedback-grape"
         }
     },
     "blog": {
-        "ui-animations-system-design": {
-            "title": "System Design: UI Animations",
-            "date": "2026-03-01",
-            "tags": ["flutter", "animations", "ui-design"],
-            "heroImage": "/images/projects/ui-animations2.png",
-            "excerpt": "Deep dive into architecture decisions behind building performant, gesture-driven UI animations with Flutter.",
+        "feedback-grape": {
+            "title": "Feedback GRAPE: A python library for machine learning based optimal quantum control",
+            "date": "2025-08-04",
+            "tags": ["JAX", "Python", "RNNs", "Quantum Computing"],
+            "heroImage": "/images/projects/feedback-grape/feedback.png",
+            "excerpt": "An Introduction to Feedback GRAPE, a machine learning based extension to the GRAPE algorithm for optimal quantum control, and the python library implementing it.",
             "sections": [
                 {
-                    "heading": "Architecture Overview",
-                    "content": "<p>The animation system is built on Flutter's compositing layer, leveraging implicit and explicit animations for different use cases. The architecture separates animation logic from widget trees using AnimationController instances managed at the state level.</p><p>Each animation sequence is defined as a composable unit that can be chained, reversed, and combined with other sequences through a custom animation orchestrator.</p>",
-                    "image": "/images/projects/ui-animations2.png",
-                    "imageCaption": "Animation system component diagram"
-                },
-                {
-                    "heading": "Performance Considerations",
-                    "content": "<p>Maintaining 60fps during complex animation sequences required careful management of the render pipeline. We use RepaintBoundary widgets to isolate animated subtrees and prevent unnecessary repaints of static content.</p><p>The animation controller pool pattern ensures that multiple concurrent animations share resources efficiently without causing frame drops.</p>",
-                    "image": "/images/projects/ui-animations.png",
-                    "imageCaption": "Performance profiling results"
-                },
-                {
-                    "heading": "Gesture Integration",
-                    "content": "<p>User gestures drive animations through a velocity-aware system that translates pointer events into animation parameters. The gesture recognizer feeds into a physics-based simulation (SpringSimulation) that creates natural-feeling responses to user input.</p>",
-                    "image": null,
-                    "imageCaption": null
-                }
-            ]
-        },
-        "ethereum-dapp-system-design": {
-            "title": "System Design: Ethereum DApp",
-            "date": "2026-02-15",
-            "tags": ["vue", "ethereum", "web3", "blockchain"],
-            "heroImage": "/images/projects/ethereum.png",
-            "excerpt": "How we architected a Vue-based decentralized application with smart contract integration and real-time blockchain state management.",
-            "sections": [
-                {
-                    "heading": "Architecture Overview",
-                    "content": "<p>The DApp follows a layered architecture: Vue frontend communicates with an abstraction layer that wraps Web3.js calls, which in turn interact with deployed Solidity smart contracts on the Ethereum network.</p><p>State management uses Vuex stores synchronized with on-chain data through event listeners and polling mechanisms for pending transactions.</p>",
-                    "image": "/images/projects/ethereum.png",
-                    "imageCaption": "DApp architecture layers"
-                },
-                {
-                    "heading": "Smart Contract Integration",
-                    "content": "<p>Contract interactions are managed through a service layer that handles ABI encoding, gas estimation, and transaction lifecycle management. Each contract method is wrapped in a typed interface providing compile-time safety and runtime validation.</p><p>Error handling covers common blockchain failure modes: reverted transactions, nonce conflicts, and network congestion with automatic retry logic.</p>",
+                    "heading": "What is Quantum Optimal Control?",
+                    "content": "<p>Quantum Optimal Control is a field focusing on finding the optimal control pulses that\nwould drive a quantum system from an initial state to a target state. Compared with\nthe classical theory of control, a simple example would be the inverted pendulum on a\nmoving cart. The pendulum starts at a resting position facing downwards (the initial\nstate), and the goal is to find how to move the car’s actuators such that the pendulum\nis balanced in an upright position. There are several different techniques to do that\nfor classical control engineering, like PID controllers, pole placement, or even\nsome machine learning techniques. When trying to control quantum systems, there is\nsimilarity in the objective of driving a system from an initial state to a target state,\nor even in maintaining and stabilizing a certain initial state over time, however\nin quantum optimal control, we try to measure quantum mechanical quantities rather\nthan the classical quantities we are used to in our daily lives. There are many quantum\ncontrol algorithms and their applications lie at the heart of many of the quantum\ntechnologies that are emerging or have emerged in the recent decades, from\ncontrolling quantum information units called qubits and engineering the pulses that\ncontrols and performs operations on them for certain quantum computing platforms, to\nquantum error correction, where the performance and reliability of qubits are improved\n and Nuclear Magnetic Resonance (NMR) applications for which Gradient Ascent\nPulse Engineering Gradient Ascent Pulse Engineering (GRAPE) - one of the main\nalgorithms that we build upon in this thesis - was first introduced.</p>",
                     "image": null,
                     "imageCaption": null
                 },
                 {
-                    "heading": "Wallet and Authentication",
-                    "content": "<p>Authentication is handled through MetaMask wallet connection, with a custom provider abstraction supporting multiple wallet types. The session management system tracks connection state and handles network switching gracefully.</p>",
-                    "image": null,
-                    "imageCaption": null
-                }
-            ]
-        },
-        "ai-resources-system-design": {
-            "title": "System Design: AI Resources Platform",
-            "date": "2026-01-20",
-            "tags": ["gatsby", "graphql", "static-generation"],
-            "heroImage": "/images/projects/ai-resources.png",
-            "excerpt": "Building a high-performance static site with Gatsby for AI resource aggregation, featuring GraphQL-driven content and smart search.",
-            "sections": [
-                {
-                    "heading": "Architecture Overview",
-                    "content": "<p>The platform leverages Gatsby's static site generation pipeline to pre-render all resource pages at build time. Content is sourced through a GraphQL data layer that aggregates markdown files, external APIs, and structured JSON datasets.</p><p>The build pipeline processes and optimizes all images, generates responsive image sets, and creates the search index used by the client-side search feature.</p>",
-                    "image": "/images/projects/ai-resources.png",
-                    "imageCaption": "Static generation pipeline"
-                },
-                {
-                    "heading": "Search and Filtering",
-                    "content": "<p>Client-side search is powered by a pre-built search index generated during the Gatsby build step. The index uses an inverted document frequency model for relevance ranking, keeping the search experience fast without requiring a backend server.</p><p>Filtering combines tag-based taxonomy with full-text search, allowing users to narrow results by category, difficulty level, and content type simultaneously.</p>",
+                    "heading": "Where does Machine Learning Come Into Play?",
+                    "content": "<p>As suggested by the name GRAPE, it uses gradient ascent in an optimization process to try to maximize a certain quality called fidelity, which specifies how close two quantum states are to each other. However, the novelty of GRAPE lies in its ability to incorporate the quantum-mechanical dynamics of the system in the optimization process; thus, the navigation of the objective function is performed by calculating gradients of the quantum dynamics to try to reach the maximal fidelity. At the time, this was a novel approach and made the algorithm one of the most successful and most used algorithms for optimal quantum control, and is in fact implemented in many software packages such as QuTip and others. Since then, automatic differentiation with frameworks such as PyTorch, TensorFlow, and JAX was primarily used rather than using the analytically derived methods derived in the original paper.</p>",
                     "image": null,
                     "imageCaption": null
                 },
                 {
-                    "heading": "Content Pipeline",
-                    "content": "<p>Resources are authored in markdown with frontmatter metadata. A custom Gatsby plugin validates content structure at build time, ensuring all required fields are present and links are valid before deployment.</p>",
+                    "heading": "A Crucial Extention",
+                    "content": "<p>There has been, however, one crucial extension that was missing from the original GRAPE implementation, which is feedback. Recently, a new approach was presented by Porotti et al. providing this very extension. Feedback GRAPE borrows concepts from Reinforcement Learning (RL) to incorporate the stochastic outcomes of quantum measurements as feedback to help influence the process of searching for the optimal control sequence. There is a set of already existing machine learning techniques for feedback, namely, model-free RL, and there have been several attempts to use model-free RL to find optimal feedback strategies for quantum systems. Those model-free techniques try to discover feedback strategies without taking gradients through quantum dynamics. The authors of the original paper, however, have devised a way to incorporate feedback of quantum measurements into a gradient-based method such as GRAPE, making use of the knowledge of the differentiable quantum dynamics, and essentially creating - using the language of RL - a model-based method. Deep-learning concepts such as Recurrent Neural Networks (RNN) or lookup tables are used in order to maintain memory of previous measurement outcomes to influence the choice of optimizable parameters for the future measurements. This feedback-GRAPE method has proven to lead to significant improvements over model-free methods to incorporate feedback into finding the optimal control pulses for tasks such as state preparation, purification, stabilization, and even for some error correcting tasks.</p>",
+                    "image": null,
+                    "imageCaption": null
+                },
+                {
+                    "heading": "Building the Library",
+                    "content": "<p>We therefore provide a Python framework using JAX’s powerful automatic differentiation, vectorization, and GPU-compatiblity to implement bothGRAPE and feedback-GRAPE in a generic, efficient, and GPU-enabled manner. We illustrate the interface of our package, introduce a new intuitive API for composite systems, and demonstrate the successful results in several state preparation and stabilization tasks.</p>",
+                    "image": null,
+                    "imageCaption": null
+                },
+                {
+                    "heading": "References and Links to thesis",
+                    "content": "<p>Riccardo Porotti, Vittorio Peano, and Florian Marquardt. Gradient-ascent pulse engineering with feedback. PRX Quantum, 4(3):030305, 2023.</p>\n<p>Thesis Link: <a href=\"https://drive.google.com/file/d/1XGPELuWLAKlB5_6CKso5ZBByHw63uth1/view?usp=sharing\">https://drive.google.com/file/d/1XGPELuWLAKlB5_6CKso5ZBByHw63uth1/view?usp=sharing</a></p>",
                     "image": null,
                     "imageCaption": null
                 }

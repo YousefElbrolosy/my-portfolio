@@ -60,21 +60,20 @@
           <span v-for="tag in post.tags" :key="tag" class="post-tag">{{ tag }}</span>
         </div>
 
-        <div
-          v-for="(section, i) in post.sections"
-          :key="i"
-          class="article-section"
-          data-aos="fade-up"
-        >
-          <h2 class="section-heading">{{ section.heading }}</h2>
-          <div class="section-content" v-html="section.content"></div>
-          <div v-if="section.image" class="section-image">
-            <img :src="section.image" :alt="section.imageCaption || ''" />
-            <span v-if="section.imageCaption" class="image-caption">
-              // {{ section.imageCaption }}
-            </span>
-          </div>
+      <div
+        v-for="(section, i) in post.sections"
+        :key="i"
+        class="article-section"
+      >
+        <h2 class="section-heading">{{ section.heading }}</h2>
+        <div class="section-content" v-html="section.content"></div>
+        <div v-if="section.image" class="section-image">
+          <img :src="section.image" :alt="section.imageCaption || ''" />
+          <span v-if="section.imageCaption" class="image-caption">
+            // {{ section.imageCaption }}
+          </span>
         </div>
+      </div>
 
       </article>
     </div>

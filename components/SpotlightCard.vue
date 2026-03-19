@@ -174,6 +174,7 @@ defineProps({
 
 .spotlight-gist {
   max-width: 100%;
+  max-height: fit-content;
 }
 
 @media (max-width: 768px) {
