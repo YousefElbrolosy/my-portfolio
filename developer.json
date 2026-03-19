@@ -1,7 +1,12 @@
 {
     "name": "Yousef Elbrolosy",
     "logo_name": "yousef-elbrolosy",
-    "role": "Software Engineer",
+    "role": [
+        "Software Engineer",
+        "Researcher",
+        "AI Enthusiast",
+        "Physics Nerd"
+    ],
     "about": {
         "sections": {
             "professional-info": {
@@ -50,11 +55,15 @@
                 "info": {
                     "sports": {
                         "title": "sports",
-                        "description": "<br>I am an avid sports enthusiast and lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <br> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+                        "description": "<br>I am a former profesional tennis player at AL Ahly Club. I played for almost 12 years and reached a career high ranking of 22 nation wide across Egypt."
                     },
-                    "favorite-games": {
-                        "title": "favorite-games",
-                        "description": "<br>I am a passionate gamer with Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. <br><br> Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                    "music": {
+                        "title": "music",
+                        "description": "<br> I am an electric guitar player, and a producer. I enjoy listening to rock, pop rock, jazz. I have several tracks uploaded on Soundcloud and I am looking for a band, if you can play an instrument and want to jam, hit me up!"
+                    },
+                    "pizza": {
+                        "title": "pizza",
+                        "description": "<br> I love pizza. I love making it but currently I suck at making it, please lend good pizza oven."
                     }
                 }
             }
@@ -86,22 +95,17 @@
                 "youtube": {
                     "title": "YouTube channel",
                     "url": "https://www.youtube.com/",
-                    "user": "username"
+                    "user": "yousefelbrolosy9753"
                 },
-                "gurushots": {
-                    "title": "GuruShots profile",
-                    "url": "https://gurushots.com/",
-                    "user": "username"
+                "educational": {
+                    "title": "Educational Channel",
+                    "url": "https://www.youtube.com/@",
+                    "user": "الحوسبة_الكمومية_بالعربية"
                 },
-                "instagram": {
-                    "title": "Instagram account",
-                    "url": "https://instagram.com/",
-                    "user": "username"
-                },
-                "twitch": {
-                    "title": "Twitch profile",
-                    "url": "https://twitch.com/",
-                    "user": "username"
+                "stackoverflow": {
+                    "title": "StackOverflow profile",
+                    "url": "https://stackoverflow.com/",
+                    "user": "users/19757520/yousef-elbrolosy"
                 }
             }
         }

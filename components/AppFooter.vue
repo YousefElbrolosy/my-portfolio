@@ -16,7 +16,7 @@
             </div>
 
         <div class="hidden md:flex items-center px-5">
-            <p>Special thanks to <a href="https://www.behance.net/darelova" target="_blank"> @darelova </a> for the amazing design <3</p>
+            <p>Special thanks to <a href="https://www.behance.net/darelova" target="_blank"> @darelova </a> for the amazing design and <a href="https://github.com/alexdeploy" target="_blank"> @alexdeploy </a> for bringing it to life <3 </p>
         </div>
         </div>
 

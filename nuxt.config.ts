@@ -49,6 +49,23 @@ export default defineNuxtConfig({
    */
   modules: [
     '@nuxtjs/tailwindcss',
+    [
+      'nuxt-mail',
+      {
+        message: {
+          to: process.env.NUXT_MAIL_TO,
+        },
+        smtp: {
+          host: process.env.NUXT_MAIL_SMTP_HOST,
+          port: Number(process.env.NUXT_MAIL_SMTP_PORT || 587),
+          secure: process.env.NUXT_MAIL_SMTP_SECURE === 'true',
+          auth: {
+            user: process.env.NUXT_MAIL_SMTP_USER,
+            pass: process.env.NUXT_MAIL_SMTP_PASS,
+          },
+        },
+      },
+    ],
   ],
 
   components: {
@@ -66,7 +83,6 @@ export default defineNuxtConfig({
     cssPath: '~/assets/tailwind.css',
     configPath: 'tailwind.config',
     exposeConfig: true, // true to resolve the tailwind config in runtime. https://tailwindcss.nuxt.dev/getting-started/options/#exposeconfig
-    injectPosition: 0,
     viewer: false,
   },
 

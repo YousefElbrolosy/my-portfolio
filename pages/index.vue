@@ -18,17 +18,11 @@
             <h1>{{ config.name }}</h1>
             <span class="diple flex">
               >&nbsp;
-              <h2 class="line-1 anim-typewriter max-w-fit"> {{ config.role }} </h2>
+              <h2 :key="activeRoleIndex" class="line-1 anim-typewriter max-w-fit"> {{ activeRole }} </h2>
             </span>
           </div>
 
           <div id="info">
-            <span class="action">
-              // complete the game to continue
-            </span>
-            <span :class="{hide: isMobile}">
-              // you can also see it on my Github page
-            </span>
             <span :class="{hide: !isMobile}">
               // find my profile on Github:
             </span>
@@ -100,6 +94,25 @@ const spotlightRefs = ref({})
 const { scrollProgress } = useScrollProgress(scrollContainer)
 
 const heroHeight = ref('100vh')
+const activeRoleIndex = ref(0)
+
+const roleList = computed(() => {
+  const roles = config.value?.role
+
+  if (Array.isArray(roles) && roles.length > 0) {
+    return roles
+  }
+
+  if (typeof roles === 'string' && roles.trim().length > 0) {
+    return [roles]
+  }
+
+  return ['Software Engineer']
+})
+
+const activeRole = computed(() => {
+  return roleList.value[activeRoleIndex.value] || roleList.value[0]
+})
 
 const heroOpacity = computed(() => {
   return Math.max(0, 1 - scrollProgress.value * 2.5)
@@ -116,6 +129,7 @@ const scrollIndicatorOpacity = computed(() => {
 })
 
 let observer = null
+let roleRotationTimer = null
 
 onMounted(() => {
   if (window.innerWidth <= 1024) isMobile.value = true
@@ -145,11 +159,18 @@ onMounted(() => {
       if (el) observer.observe(el)
     })
   })
+
+  if (roleList.value.length > 1) {
+    roleRotationTimer = setInterval(() => {
+      activeRoleIndex.value = (activeRoleIndex.value + 1) % roleList.value.length
+    }, 5000)
+  }
 })
 
 onBeforeUnmount(() => {
   window.removeEventListener('resize', handleResize)
   if (observer) observer.disconnect()
+  if (roleRotationTimer) clearInterval(roleRotationTimer)
 })
 
 function updateHeroHeight() {

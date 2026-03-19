@@ -9,13 +9,18 @@
     "test": "vitest"
   },
   "devDependencies": {
+    "h3": "*",
+    "nitropack": "*",
     "nuxt": "^3.15.4",
+    "nuxt-mail": "8.0.4",
+    "ofetch": "*",
     "vitest": "^3.0.7"
   },
   "dependencies": {
     "@highlightjs/vue-plugin": "highlightjs/vue-plugin",
     "@nuxtjs/tailwindcss": "^6.13.1",
     "aos": "^2.3.4",
-    "highlight.js": "^11.7.0"
+    "highlight.js": "^11.7.0",
+    "nodemailer": "^8.0.3"
   }
 }

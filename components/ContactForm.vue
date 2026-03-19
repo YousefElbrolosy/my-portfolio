@@ -12,7 +12,11 @@
             <label for="message-input" class="mb-3">_message:</label>
             <textarea id="message-input" name="message" :placeholder="message" class="placeholder-slate-600" required></textarea>
         </div>
-        <button id="submit-button" type="submit" class="py-2 px-4">submit-message</button>
+        <button id="submit-button" type="submit" class="py-2 px-4" :disabled="submitState === 'sending'">
+            {{ submitState === 'sending' ? 'sending...' : 'submit-message' }}
+        </button>
+        <p v-if="submitState === 'success'" class="mt-3 text-[#43D9AD]">message sent successfully</p>
+        <p v-if="submitState === 'error'" class="mt-3 text-[#E99287]">failed to send message</p>
     </form>
 </template>
 
@@ -35,15 +39,39 @@ export default {
             required: true
         }
     },
+    data() {
+        return {
+            submitState: 'idle'
+        }
+    },
     mounted() {
-        document.getElementById("contact-form").addEventListener("submit", function(event) {
+        document.getElementById("contact-form").addEventListener("submit", async (event) => {
             event.preventDefault();
-            const name = document.querySelector('input[name="name"]').value;
-            const email = document.querySelector('input[name="email"]').value;
-            const message = document.querySelector('textarea[name="message"]').value;
+            const form = event.target;
+            const name = document.querySelector('input[name="name"]').value.trim();
+            const email = document.querySelector('input[name="email"]').value.trim();
+            const message = document.querySelector('textarea[name="message"]').value.trim();
             
-            // Here the code to send the email
-            
+            if (!name || !email || !message) {
+                this.submitState = 'error';
+                return;
+            }
+
+            this.submitState = 'sending';
+
+            try {
+                await this.$mail.send({
+                    subject: `Portfolio contact from ${name}`,
+                    text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
+                    replyTo: email,
+                });
+
+                this.submitState = 'success';
+                form.reset();
+            } catch (error) {
+                this.submitState = 'error';
+                console.error(error);
+            }
         });
     }
 }

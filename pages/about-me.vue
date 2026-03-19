@@ -40,18 +40,6 @@
           </div>
         </div>
 
-        <!-- contact -->
-        <div id="section-content-title-contact" class="flex items-center min-w-full border-top">
-          <img id="section-arrow-menu" src="/icons/arrow.svg" alt="" class="section-arrow mx-3 open">
-          <p v-html="config.contacts.direct.title" class="font-fira_regular text-white text-sm"></p>
-        </div>
-        <div id="contact-sources" class="hidden lg:flex lg:flex-col my-2">
-          <div v-for="(source, key) in config.contacts.direct.sources" :key="key" class="flex items-center mb-2">
-            <img :src="'/icons/' + key + '.svg'" alt="" class="mx-4">
-            <a v-html="source" href="/" class="font-fira_retina text-menu-text hover:text-white"></a>
-          </div>
-        </div>
-
       </div>
 
       <!-- mobile -->
@@ -131,13 +119,7 @@
           <div class="w-full h-full ml-5 mr-10 lg:my-5 overflow-scroll">
               <CommentedText :text="config.about.sections[currentSection]?.info[folder].description" />
           </div>
-          
-          <!-- scroll bar -->
-          <div id="scroll-bar" class="h-full border-left hidden lg:flex justify-center py-1">
-            <div id="scroll">
-          </div>
-
-        </div>
+        
 
       </div>
       
@@ -167,10 +149,7 @@
             </div>
           </div>
 
-          <!-- scroll bar -->
-          <div id="scroll-bar" class="h-full border-left hidden lg:flex justify-center py-1">
-            <div id="scroll"></div>
-          </div>
+
         </div>
       </div>
     </div>
@@ -180,7 +159,7 @@
 <style>
 
 #sections {
-  width: 5rem; /* 80px */
+  width: 5.2rem; /* 128px */
   height: 100%;
   display: none;
   border-right: 1px solid #1E2D3D;
@@ -266,6 +245,10 @@
 
 #section-content #contacts {
   padding: 0px 25px;
+}
+
+#section-content{
+  min-width: 30px;
 }
 
 </style>

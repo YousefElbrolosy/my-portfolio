@@ -67,10 +67,6 @@
                     <div class="form-content">
                         <FormContentCode :name="name" :email="email" :message="message" />
                     </div>
-                    <!-- scroll bar -->
-                    <div id="scroll-bar" class="h-full border-left flex justify-center py-1">
-                        <div id="scroll"></div>
-                    </div>
                 
                 </div>
             </div>
