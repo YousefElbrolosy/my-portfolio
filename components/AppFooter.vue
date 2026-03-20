@@ -70,6 +70,7 @@ footer > a > img {
     width: 1.25rem; /* 20px */
     height: 1.25rem; /* 20px */
     margin-left: 0.5rem; /* 8px */
+    margin-right: 0.5rem; /* 8px */
   }
 
 #social-icons > a:hover img {

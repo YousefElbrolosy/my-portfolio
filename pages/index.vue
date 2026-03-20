@@ -13,13 +13,18 @@
 
           <div class="head">
             <span>
-              Hi all, I am
+              Hello, I am
             </span>
             <h1>{{ config.name }}</h1>
             <span class="diple flex">
               >&nbsp;
               <h2 :key="activeRoleIndex" class="line-1 anim-typewriter max-w-fit"> {{ activeRole }} </h2>
             </span>
+            <div class="action">
+              <a class="cv-button" href="https://drive.google.com/uc?export=download&id=1F5_y3S46aG99Rz_pEuPIZ24DG23WVL6R" download>
+                download_cv
+              </a>
+            </div>
           </div>
 
           <div id="info">
@@ -229,6 +234,8 @@ function handleResize() {
 }
 
 .hero-content {
+  position: relative;
+  z-index: 20;
   display: flex;
   flex: 1;
   padding-left: 275px;
@@ -319,12 +326,32 @@ function handleResize() {
 }
 
 #info {
-  padding-block: 2.5rem;
+  padding-block: 0.5rem;
   font-size: 14px;
 }
 
 #info .action {
   display: flex;
+}
+
+.cv-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+  padding: 0.6rem 1rem;
+  border: 1px solid #43D9AD;
+  border-radius: 8px;
+  font-family: 'Fira Code Retina';
+  font-size: 13px;
+  color: #43D9AD;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+.cv-button:hover {
+  background-color: #43D9AD;
+  color: #011627;
+  transform: translateY(-1px);
 }
 
 .hide {
@@ -422,6 +449,7 @@ function handleResize() {
   background: radial-gradient(circle at 50% 50%,rgba(77, 91, 206, 1), rgba(76, 0, 255, 0));
   opacity: 0.5;
   z-index: 10;
+  pointer-events: none;
 }
 
 .css-blurry-gradient-green {
@@ -435,6 +463,7 @@ function handleResize() {
   background: radial-gradient(circle at 50% 50%,rgba(67, 217, 173, 1), rgba(76, 0, 255, 0));
   opacity: 0.5;
   z-index: 10;
+  pointer-events: none;
 }
 
 /* Typewrite Animation */

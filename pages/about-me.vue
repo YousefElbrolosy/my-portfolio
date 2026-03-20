@@ -33,8 +33,8 @@
             </div>
             <div v-if="folder.files !== undefined" class="col-span-2">
               <div v-for="(file, key) in folder.files" :key="key" class="hover:text-white hover:cursor-pointer flex my-2">
-                <img src="/icons/markdown.svg" alt="" class="ml-8 mr-3"/>
-                <p >{{ key }}</p>
+              <img src="/icons/markdown.svg" alt="" class="ml-8 mr-3"/>
+              <a :href="file" :download="key" class="hover:text-white">{{ key }}</a>
               </div> 
             </div>
           </div>
@@ -49,12 +49,12 @@
           
           <!-- section title (mobile) -->
           <div :key="section.title" :src="section.icon" id="section-content-title" class="flex lg:hidden mb-1" @click="focusCurrentSection(section)">
-            <img src="/icons/arrow.svg" :id="'section-arrow-' + section.title" alt="" class="section-arrow">
+            <img src="/icons/arrow.svg" :id="'section-arrow-' + section.title" alt="" class="section-arrow" :class="{ 'rotate-90': currentSection === section.title }">
             <p v-html="section.title" class=" text-white text-sm"></p>
           </div>
 
           <!-- folders -->
-          <div :id="'folders-' + section.title" class="hidden"> <!-- <div :id="'folders-' + section.title" :class="currentSection == section.title ? 'block' : 'hidden'"> -->
+          <div :id="'folders-' + section.title" :class="currentSection === section.title ? 'block' : 'hidden'">
             <div v-for="(folder, key, index) in config.about.sections[section.title]?.info" :key="key" class="grid grid-cols-2 items-center my-2 font-fira_regular text-menu-text hover:text-white hover:cursor-pointer" @click="focusCurrentFolder(folder)">
               <div class="flex col-span-2">
                 <img id="diple" src="/icons/diple.svg">
@@ -141,11 +141,16 @@
         
           <div id="gists" class="flex flex-col lg:px-6 lg:py-4 w-full overflow-hidden">
             <!-- title -->
-            <h3 class="text-white lg:text-menu-text mb-4 text-sm">// Code snippet showcase:</h3>
+            <h3 class="text-white lg:text-menu-text mb-4 text-sm">// {{ currentShowcase.title }}</h3>
 
-            <div class="flex flex-col overflow-scroll">
-              <!-- snippets -->
-              <GistSnippet data-aos="fade-down" v-for="(gist, key) in config.gists" :key="key" :id="gist" />
+            <div class="showcase-list overflow-scroll">
+              <div v-for="item in currentShowcase.items" :key="item.title" class="showcase-card">
+                <img :src="item.image" :alt="item.title" class="showcase-image">
+                <div class="showcase-content">
+                  <h4 class="showcase-heading">{{ item.title }}</h4>
+                  <p class="showcase-text">{{ item.description }}</p>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -251,6 +256,43 @@
   min-width: 30px;
 }
 
+.showcase-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.showcase-card {
+  border: 1px solid #1E2D3D;
+  border-radius: 12px;
+  background-color: #011221;
+  overflow: hidden;
+}
+
+.showcase-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.showcase-content {
+  padding: 0.9rem 1rem 1rem;
+}
+
+.showcase-heading {
+  color: #E5E9F0;
+  font-family: 'Fira Code Medium';
+  font-size: 14px;
+  margin-bottom: 0.35rem;
+}
+
+.showcase-text {
+  color: #8da9c6;
+  font-family: 'Fira Code Retina';
+  font-size: 12px;
+  line-height: 1.5;
+}
+
 </style>
 
 <script>
@@ -258,9 +300,51 @@ import DevConfig from '~/developer.json';
 export default {
   data() {
     return {
-      currentSection: 'personal-info',
-      folder: 'bio',
+      currentSection: 'professional-info',
+      folder: 'experience',
       loading: true,
+      showcaseBySection: {
+        'professional-info': {
+          title: 'Professional Highlights',
+          items: [
+            {
+              title: 'Bachelor Thesis at the Max Planck Institute',
+              description: 'A transformative 5 month journey.',
+              image: '/images/mpl.png',
+            },
+            {
+              title: 'Cubic Information Systems Internship',
+              description: 'Experience in software development at a production level.',
+              image: '/images/cubic2.png',
+            },
+          ],
+        },
+        'personal-info': {
+          title: 'Personal Story',
+          items: [
+            {
+              title: 'About Me',
+              description: 'Exploring Life',
+              image: '/images/personal.jpeg',
+            },
+          ],
+        },
+        'hobbies-info': {
+          title: 'Outside Of Work',
+          items: [
+            {
+              title: 'Sports',
+              description: 'Replace with tennis and training photos.',
+              image: '/images/hobbies/tennis.jpg',
+            },
+            {
+              title: 'Music',
+              description: 'Soundcloud: https://soundcloud.com/yousef-premiero',
+              image: '/images/hobbies/guitar.JPG',
+            },
+          ],
+        },
+      },
     }
   },
   /**
@@ -282,14 +366,14 @@ export default {
     isOpen() {
       return folder => this.folder === folder;
     },
+    currentShowcase() {
+      return this.showcaseBySection[this.currentSection] || this.showcaseBySection['professional-info']
+    },
   },
   methods: {
     focusCurrentSection(section) {
       this.currentSection = section.title
       this.folder = Object.keys(section.info)[0]
-
-      document.getElementById('folders-' + section.title).classList.toggle('hidden') // show folders
-      document.getElementById('section-arrow-' + section.title).classList.toggle('rotate-90'); // rotate arrow
     },
     focusCurrentFolder(folder) {
       this.folder = folder.title
@@ -310,6 +394,11 @@ export default {
     },
   },
   mounted(){
+    const professionalSection = this.config.about.sections['professional-info']
+    if (professionalSection) {
+      this.currentSection = 'professional-info'
+      this.folder = Object.keys(professionalSection.info)[0]
+    }
     this.loading = false
   }
 }

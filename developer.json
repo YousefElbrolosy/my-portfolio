@@ -15,15 +15,15 @@
                 "info": {
                     "experience": {
                         "title": "experience",
-                        "description": "<br>Over the past 5 years, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. <br><br> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+                        "description": "I am an ex Intern at The Max Planck Institute for the Science of Light, one of the leading research institutes in the world. THerer, I also did my Bachelor Project which used Machine Learning Techniques for defelovping a Software Framework to run quantum control algorithms. I have also done an internship as a full stach developer at Cubic Information Systems which is a Fintech company digitalizing financial services for Banks in the Middle East. I have led a team of 7 other interns ranging from frontend, backend and CRM developers to build a Loan Origination System for a famous bank in UAE.<br><br> Besides that, I have also undertaken a machine learning and control internship under Dr Hassan Soubra and I have published a Review paper for Metrics - MDPI Journal which you can find <a href=\"https://www.mdpi.com/3042-5042/2/2/9\"><u>here</u></a>."
                     },
                     "hard-skills": {
                         "title": "hard-skills",
-                        "description": "<br>As a front-end developer, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. <br><br> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+                        "description": "<br> <u>Languages</u>: Arabic (Native), English (Fluent), German (Good, B2 level) Java, Python, C/C++, SQL (Postgres, MSSQL), JavaScript Typescript, HTML/CSS, Haskell, Prolog <br><br> <u>Frameworks</u>: Angular, React, Node.js, ASP .NET, JUnit, Pytests <br><br> <u>Certification</u>: Machine Learning Specialization (Stanford online and DeepLearning.AI) <br><br> <u>Developer Tools</u>: Git, Github Actions CI/CD, Docker, VS Code, Visual Studio, PyCharm, IntelliJ, Eclipse"
                     },
                     "soft-skills": {
                         "title": "soft-skills",
-                        "description": "<br>I bring more than Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <br><br> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+                        "description": "<br> I like to learn new things, within my domain or outside it. I enjoy meeting new people and hearing about their experiences either professional or just about life in general."
                     }
                 }
             },
@@ -33,18 +33,13 @@
                 "info": { 
                     "bio": {
                         "title": "bio",
-                        "description": "<br> About me <br> I have 5 years of experience in web development lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <br><br> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat  nulla pariatur. Excepteur sint occaecat  officia deserunt mollit anim id est laborum."
-                    },
-                    "interests": {
-                        "title": "interests",
-                        "description": "<br>I am constantly learning and lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+                        "description": "<br> About me <br> I am a senior student at the German University in Cairo. I am a software engineer, researcher, and AI enthusiast. I have a passion for learning and exploring new technologies, and I am always looking for opportunities to grow and develop my skills. I have a strong background in software development, with experience in both frontend and backend development, as well as machine learning and control. I am also a physics nerd, with a particular interest in quantum computing and quantum control."
                     },
                     "education": {
                         "title": "education",
-                        "description": "<br>I have always been passionate about lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. <br><br> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+                        "description": "<br>I took my IGCSEs at the Egyptian British International School and am currently pursuing my Bachelor's degree in Computer Science at the German University in Cairo.",
                         "files": {
-                            "high-school": "I have been in 'Las viñas'...",
-                            "university": "The university..."
+                            "Bachelor Thesis": "https://drive.google.com/uc?export=download&id=1XGPELuWLAKlB5_6CKso5ZBByHw63uth1"
                         }
                     }
                 }
@@ -59,7 +54,7 @@
                     },
                     "music": {
                         "title": "music",
-                        "description": "<br> I am an electric guitar player, and a producer. I enjoy listening to rock, pop rock, jazz. I have several tracks uploaded on Soundcloud and I am looking for a band, if you can play an instrument and want to jam, hit me up!"
+                        "description": "<br> I am an electric guitar player, and a producer. I enjoy listening to rock, pop rock, jazz. I have several tracks uploaded on Soundcloud and I am looking for a band, if you can play an instrument and want to jam, hit me up! <br><br> Soundcloud: <a href=\"https://soundcloud.com/yousef-premiero\"><u>https://soundcloud.com/yousef-premiero</u></a>"
                     },
                     "pizza": {
                         "title": "pizza",
@@ -160,7 +155,7 @@
                 },
                 {
                     "heading": "References and Links to thesis",
-                    "content": "<p>Riccardo Porotti, Vittorio Peano, and Florian Marquardt. Gradient-ascent pulse engineering with feedback. PRX Quantum, 4(3):030305, 2023.</p>\n<p>Thesis Link: <a href=\"https://drive.google.com/file/d/1XGPELuWLAKlB5_6CKso5ZBByHw63uth1/view?usp=sharing\">https://drive.google.com/file/d/1XGPELuWLAKlB5_6CKso5ZBByHw63uth1/view?usp=sharing</a></p>",
+                    "content": "<p>Riccardo Porotti, Vittorio Peano, and Florian Marquardt. Gradient-ascent pulse engineering with feedback. PRX Quantum, 4(3):030305, 2023.</p>\n<p>Thesis Link: <a href=\"https://drive.google.com/file/d/1XGPELuWLAKlB5_6CKso5ZBByHw63uth1/view?usp=sharing\"><u>here</u></a></p>",
                     "image": null,
                     "imageCaption": null
                 }
@@ -169,46 +164,46 @@
     },
     "projects": {
         "1": {
-            "title": "_ui-animations",
-            "description": "Duis aute irure dolor in velit esse cillum dolore.",
-            "img": "/images/projects/ui-animations2.png",
-            "tech": ["Flutter"],
-            "url": "https://github.com/"
+            "title": "stock-prices-data-engineering-project",
+            "description": "Built an end-to-end distributed data pipeline that processes stock trading data in real-time into a comprehensive analytics platform.",
+            "img": "/images/projects/data-engineering.png",
+            "tech": ["Airflow", "Docker", "Python", "PostgreSQL", "Kafka", "Spark", "Git", "GitHub"],
+            "url": "https://github.com/YousefElbrolosy/stock-prices-data-engineering-project"
         },
         "2": {
-            "title": "_ai-resources",
-            "description": "Duis aute irure dolor in velit esse cillum dolore.",
-            "img": "/images/projects/ai-resources.png",
-            "tech": ["Gatsby"],
-            "url": "https://github.com/"
+            "title": "Fantasy Premier League Graph-RAG Assistant",
+            "description": "An LLM powered assistant that provides data-driven insights and recommendations for Fantasy Premier League managers using Retrieval-Augmented Generation (RAG) architecture.",
+            "img": "/images/projects/RAG.png",
+            "tech": ["LangChain", "Python"],
+            "url": "https://github.com/YousefElbrolosy/fantasy-football-predictor"
         },
         "3": {
-            "title": "_worldmap",
-            "description": "Duis aute irure dolor in velit esse cillum dolore.",
-            "img": "/images/projects/worldmap.png",
-            "tech": ["Angular"],
-            "url": "https://github.com/"
+            "title": "Rahhal - Your All-in-One Platform to Travel the World",
+            "description": "In a team of 10, we followed agile methodologies to deliver a comprehensive travel planning platform offering personalized itineraries, seamless bookings, and budget-friendly travel suggestions.",
+            "img": "/images/projects/Rahhal.png",
+            "tech": ["Typescript", "Node.js", "Express.js", "MongoDB", "Git", "GitHub", "Docker", "RabbitMQ", "React", "Vite", "HTML/CSS"],
+            "url": "https://github.com/Advanced-computer-lab-2024/Rahhal"
         },
         "4": {
-            "title": "_ui-animations",
-            "description": "Duis aute irure dolor in velit esse cillum dolore.",
-            "img": "/images/projects/ui-animations.png",
-            "tech": ["React"],
-            "url": "https://github.com/"
+            "title": "Java Database Engine with B+ Tree Indexing",
+            "description": "This project entails the development of a database engine utilizing Java within a Maven project framework. The database engine facilitates CRUD (Create, Read, Update, Delete) operations while minimizing SQL query execution time through the implementation of indexing on pertinent columns using the B+ tree data structure.",
+            "img": "/images/projects/b+trees.png",
+            "tech": ["Java"],
+            "url": "https://github.com/OmarKongo/DataBaseEngine"
         },
         "5": {
-            "title": "_tetris-game",
-            "description": "Duis aute irure dolor in velit esse cillum dolore.",
-            "img": "/images/projects/tetris-game.png",
-            "tech": ["React"],
-            "url": "https://github.com/"
+            "title": "Operating System Simulator",
+            "description": "An OS simulator, utilizing Multi-Level-Feedback-Queues (MLFQ) for efficient process scheduling and mutexes for resource management , ensuring concurrency.",
+            "img": "/images/projects/OS.png",
+            "tech": ["C"],
+            "url": "https://github.com/FarahFaisall/Operating_System"
         },
         "6": {
-            "title": "_ethereum",
-            "description": "Duis aute irure dolor in velit esse cillum dolore.",
-            "img": "/images/projects/ethereum.png",
-            "tech": ["Vue"],
-            "url": "https://github.com/"
+            "title": "feedback-grape",
+            "description": "feedback-grape is a high-performance Python package for simulating and optimizing quantum systems with feedback. It builds on the GRAPE (Gradient Ascent Pulse Engineering) method and introduces a new approach that integrates feedback in a natural, differentiable, and efficient way.",
+            "img": "/images/projects/feedback-grape/feedback.png",
+            "tech": ["JAX", "Python"],
+            "url": "https://github.com/YousefElbrolosy/feedback-grape"
         }
     }
 }
