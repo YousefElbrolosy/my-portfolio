@@ -9,19 +9,20 @@
     "test": "vitest"
   },
   "dependencies": {
-    "@highlightjs/vue-plugin": "highlightjs/vue-plugin",
+    "@highlightjs/vue-plugin": "^2.1.0",
     "@nuxtjs/tailwindcss": "^6.13.1",
-    "@vue/devtools-api": "^6.6.4",
     "aos": "^2.3.4",
-    "h3": "*",
+    "h3": "^1.15.1",
     "highlight.js": "^11.7.0",
-    "nodemailer": "^8.0.3",
     "nuxt": "^3.15.4",
     "nuxt-mail": "8.0.4",
-    "ofetch": "*"
+    "ofetch": "^1.4.1",
+    "vue": "^3.5.30",
+    "vue-router": "^5.0.4"
   },
   "devDependencies": {
-    "nitropack": "*",
+    "@vue/devtools-api": "^6.6.4",
+    "nitropack": "^2.13.2",
     "vitest": "^3.0.7"
   }
 }
