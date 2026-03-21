@@ -11,7 +11,8 @@ export default defineNuxtConfig({
   nitro: {
     preset: 'netlify',
     externals: {
-      inline: ['@vue/devtools-api', 'nuxt-mail', 'nodemailer'],
+      inline: ['@vue/devtools-api'],
+      external: ['nodemailer'],
     },
   },
   vite: {
