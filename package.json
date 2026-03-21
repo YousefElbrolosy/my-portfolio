@@ -11,7 +11,7 @@
   "dependencies": {
     "@highlightjs/vue-plugin": "highlightjs/vue-plugin",
     "@nuxtjs/tailwindcss": "^6.13.1",
-    "@vue/devtools-api": "^8.1.0",
+    "@vue/devtools-api": "^6.6.4",
     "aos": "^2.3.4",
     "h3": "*",
     "highlight.js": "^11.7.0",

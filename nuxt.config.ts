@@ -10,15 +10,6 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-02-28',
   nitro: {
     preset: 'netlify',
-    externals: {
-      inline: ['@vue/devtools-api'],
-      external: ['nodemailer'],
-    },
-  },
-  vite: {
-    ssr: {
-      noExternal: ['@vue/devtools-api'],
-    },
   },
   /**
    * * App Config
