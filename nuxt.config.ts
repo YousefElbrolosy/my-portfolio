@@ -10,9 +10,8 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-02-28',
   nitro: {
     preset: 'netlify',
-    bundledStorage: [],
     externals: {
-      inline: ['@vue/devtools-api'],
+      inline: ['@vue/devtools-api', 'nuxt-mail', 'nodemailer'],
     },
   },
   vite: {
