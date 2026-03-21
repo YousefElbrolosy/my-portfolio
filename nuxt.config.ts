@@ -34,7 +34,7 @@ export default defineNuxtConfig({
         { name: 'description', content: 'A awesome developer portfolio design.' },
         { property: 'og:title', content: siteTitle },
         { property: 'og:description', content: 'A awesome developer portfolio design.' },
-        { property: 'og:image', content: 'demo-share.jpg' },
+        { property: 'og:image', content: 'thumbnail.png' },
         { property: 'og:url', content: 'https://yousefelbrolosy.me/' },
         // ...
       ],
