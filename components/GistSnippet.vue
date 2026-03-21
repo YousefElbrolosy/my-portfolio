@@ -31,7 +31,9 @@
             
         </div>
 
-        <highlightjs class="snippet-container" :code="content"/>
+        <client-only>
+            <highlightjs class="snippet-container" :code="content"/>
+        </client-only>
         <div :id="'comment' + gist.id" class="flex hidden justify-between text-menu-text font-fira_retina mt-4 pt-4 border-top">
             <p id="comment" v-if="comment" class="w-5/6">{{ comment }}</p>
             <p v-else class="w-5/6">No comments.</p>
