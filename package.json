@@ -9,7 +9,6 @@
     "test": "vitest"
   },
   "dependencies": {
-    "@highlightjs/vue-plugin": "^2.1.0",
     "@nuxtjs/tailwindcss": "^6.13.1",
     "aos": "^2.3.4",
     "h3": "^1.15.1",

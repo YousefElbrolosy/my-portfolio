@@ -31,9 +31,9 @@
             
         </div>
 
-        <client-only>
-            <highlightjs class="snippet-container" :code="content"/>
-        </client-only>
+        <div class="snippet-container">
+            <pre><code class="hljs" v-html="highlightedCode"></code></pre>
+        </div>
         <div :id="'comment' + gist.id" class="flex hidden justify-between text-menu-text font-fira_retina mt-4 pt-4 border-top">
             <p id="comment" v-if="comment" class="w-5/6">{{ comment }}</p>
             <p v-else class="w-5/6">No comments.</p>
@@ -100,9 +100,7 @@ code.hljs{
 </style>
 
 <script>
-
-import hljsVuePlugin from "@highlightjs/vue-plugin";
-import 'highlight.js/lib/common';
+import hljs from 'highlight.js/lib/common';
 
 export default {
     name: 'GistSnippet',
@@ -117,6 +115,7 @@ export default {
             gist: null,
             monthsAgo: null,
             content: null,
+            highlightedCode: null,
             language: null,
             dataFetched: false,
             comment: null
@@ -126,16 +125,16 @@ export default {
         fetch(`https://api.github.com/gists/${this.id}`)
             .then(response => response.json())
             .then(data => this.setValues(data))
-            
     },
     methods: {
         async setValues(gist) {
-        this.gist = gist
-        this.monthsAgo = this.setMonths(gist.created_at)
-        this.content = this.setSnippet(gist)
-        this.language = Object.values(gist.files)[0].language
-        this.dataFetched = true
-        this.comment = await this.setComments(gist.comments_url)
+            this.gist = gist
+            this.monthsAgo = this.setMonths(gist.created_at)
+            this.content = this.setSnippet(gist)
+            this.language = Object.values(gist.files)[0].language
+            this.highlightedCode = hljs.highlightAuto(this.content).value
+            this.dataFetched = true
+            this.comment = await this.setComments(gist.comments_url)
         },
         setMonths(date) {
             let now = new Date()
@@ -146,15 +145,13 @@ export default {
             return months
         },
         setSnippet(gist) {
-            let snippet = Object.values(gist.files)[0].content // Object.values(gist.files)[0].filename.content
-            return snippet
+            return Object.values(gist.files)[0].content
         },
         async setComments(comments_url){
             let response = await fetch(comments_url)
             let data = await response.json()
-            try{
-                let body = data[0].body
-                return body
+            try {
+                return data[0].body
             } catch {
                 console.log(`no comments found on ${comments_url}`)
             }
@@ -163,9 +160,6 @@ export default {
             let comment = document.getElementById('comment' + id)
             comment.classList.toggle('hidden')
         }
-    },
-    components: {
-        highlightjs: hljsVuePlugin.component
     }
 }
 </script>
