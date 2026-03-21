@@ -10,6 +10,15 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-02-28',
   nitro: {
     preset: 'netlify',
+    bundledStorage: [],
+    externals: {
+      inline: ['@vue/devtools-api'],
+    },
+  },
+  vite: {
+    ssr: {
+      noExternal: ['@vue/devtools-api'],
+    },
   },
   /**
    * * App Config
@@ -75,7 +84,7 @@ export default defineNuxtConfig({
       '~/components',
     ],
   },
-  
+
   /**
    * * Tailwind CSS Config
    * Options: https://tailwindcss.nuxt.dev/getting-started/options/
