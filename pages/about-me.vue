@@ -334,7 +334,7 @@ export default {
           items: [
             {
               title: 'Sports',
-              description: 'Replace with tennis and training photos.',
+              description: 'Tennis',
               image: '/images/hobbies/tennis.jpg',
             },
             {
