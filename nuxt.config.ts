@@ -8,7 +8,6 @@ const siteTitle = `${config.name} | ${config.role}`
  */
 export default defineNuxtConfig({
   compatibilityDate: '2025-02-28',
-  devtools: { enabled: false },
   nitro: {
     preset: 'netlify',
   },
