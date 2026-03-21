@@ -1,5 +1,6 @@
 const config = require('./developer.json')
 const siteTitle = `${config.name} | ${config.role}`
+// TODO: Update the manifest file with your own information and icons. 
 
 
 /*
