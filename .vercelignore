@@ -1,0 +1,9 @@
+# Never upload local secrets or build artifacts with `vercel deploy`
+.env
+.env.*
+node_modules
+.nuxt
+.output
+.netlify
+dist
+.DS_Store
