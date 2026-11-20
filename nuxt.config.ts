@@ -9,9 +9,7 @@ const siteTitle = `${config.name} | ${config.role}`
 export default defineNuxtConfig({
   compatibilityDate: '2025-02-28',
   ssr: true, // Enable Server-Side Rendering (SSR)
-  nitro: {
-    preset: 'netlify',
-  },
+  // No nitro.preset: Nitro detects the host at build time (Vercel on Vercel, node-server locally)
   /**
    * * App Config
    * app config: https://nuxt.com/docs/api/configuration/nuxt-config#app
