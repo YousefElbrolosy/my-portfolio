@@ -2,6 +2,87 @@
 @tailwind components;
 @tailwind utilities;
 
+/*
+ * Theme tokens. Dark is the default; light applies when <html data-theme="light">.
+ * The theme attribute is set before first paint by the inline script in nuxt.config.ts.
+ */
+:root,
+[data-theme="dark"] {
+  color-scheme: dark;
+  --c-bg-outer: #010C15;
+  --c-bg: #011627;
+  --c-bg-sunken: #011221;
+  --c-surface: #1C2B3A;
+  --c-surface-hover: #263B50;
+  --c-surface-active: #33506D;
+  --c-border: #1E2D3D;
+  --c-hover: #1E2D3D74;
+  --c-scroll-hover: #3A5068;
+  --c-ring: #607B968B;
+  --c-ring-soft: #607B9669;
+
+  --c-fg: #FFFFFF;
+  --c-strong: #E5E9F0;
+  --c-text: #85A5C4;
+  --c-text-2: #8DA9C6;
+  --c-muted: #607B96;
+  --c-cursor: rgba(255, 255, 255, .75);
+  --c-on-accent: #010C15;
+
+  --c-green: #43D9AD;
+  --c-green-rgb: 67, 217, 173;
+  --c-orange: #FEA55F;
+  --c-blue: #4D5BCE;
+  --c-coral: #E99287;
+  --c-purple: #799FFB;
+  --c-syn-blue: #6172FF;
+  --c-syn-blue-2: #819BFF;
+  --c-syn-purple: #C98BDF;
+  --c-link: #5E6EF2;
+  --c-blob-opacity: 0.5;
+}
+
+[data-theme="light"] {
+  color-scheme: light;
+  --c-bg-outer: #DCE3EB;
+  --c-bg: #F6F8FB;
+  --c-bg-sunken: #FFFFFF;
+  --c-surface: #E8EDF3;
+  --c-surface-hover: #DBE3EC;
+  --c-surface-active: #CDD7E2;
+  --c-border: #D3DCE6;
+  --c-hover: rgba(30, 45, 61, 0.06);
+  --c-scroll-hover: #A9B7C6;
+  --c-ring: rgba(77, 99, 122, 0.35);
+  --c-ring-soft: rgba(77, 99, 122, 0.25);
+
+  --c-fg: #0F1C2B;
+  --c-strong: #1A2A3A;
+  --c-text: #3F5770;
+  --c-text-2: #3F5770;
+  --c-muted: #56708A;
+  --c-cursor: rgba(15, 28, 43, .75);
+  --c-on-accent: #FFFFFF;
+
+  --c-green: #0B8A64;
+  --c-green-rgb: 11, 138, 100;
+  --c-orange: #C25E10;
+  --c-blue: #3B47B8;
+  --c-coral: #C0473A;
+  --c-purple: #4560D6;
+  --c-syn-blue: #3B4FD9;
+  --c-syn-blue-2: #3B4FD9;
+  --c-syn-purple: #9437B0;
+  --c-link: #3B4FD9;
+  --c-blob-opacity: 0.25;
+}
+
+/* White-only SVG icons need darkening on a light background */
+[data-theme="light"] img[src$="/icons/arrow.svg"],
+[data-theme="light"] img[src$="/icons/arrow-down.svg"] {
+  filter: invert(0.85);
+}
+
 h3, h2 {
  /*  @apply font-fira_retina; */
   font-family: 'Fira Code Retina';
@@ -32,7 +113,7 @@ main.page {
 #__nuxt {
   @apply bg-blue-background flex flex-col justify-between;
   border-radius: 7px;
-  border: 1px solid #1E2D3D;
+  border: 1px solid var(--c-border);
   height: 100%;
   width: 100%;
 }
@@ -40,7 +121,7 @@ main.page {
 #section-content-title {
   width: 100%;
   min-height: 35px;
-  border-bottom: 1px solid #1E2D3D;
+  border-bottom: 1px solid var(--c-border);
   }
 
 #section-content-title:hover {
@@ -49,7 +130,7 @@ main.page {
 
 #section-content-title-contact {
   @apply cursor-pointer;
-  border-bottom: 1px solid #1E2D3D;
+  border-bottom: 1px solid var(--c-border);
 
   height: 35px;
 }
@@ -59,7 +140,7 @@ main.page {
   display: flex;
   font-size: 14px;
   height: 70px;
-  color: white;
+  color: var(--c-fg);
   padding: 0 25px;
   align-items: center;
 }
@@ -100,7 +181,7 @@ main.page {
   #section-content-title {
   width: 100%;
   height: 30px;
-  background-color: #1E2D3D;
+  background-color: var(--c-border);
   align-items: center;
   padding: 0 25px;
   }
@@ -111,7 +192,7 @@ main.page {
     padding: 0 25px;
     width: 100%;
     height: 35px;
-    background-color: #1E2D3D;
+    background-color: var(--c-border);
     margin-bottom: 3px
   }
 
@@ -250,19 +331,19 @@ main.page {
 /* Borders */
 
 .border-top {
-  border-top: 1px solid #1E2D3D;
+  border-top: 1px solid var(--c-border);
 }
 
 .border-right {
-  border-right: 1px solid #1E2D3D;
+  border-right: 1px solid var(--c-border);
 }
 
 .border-bot {
-  border-bottom: 1px solid #1E2D3D;
+  border-bottom: 1px solid var(--c-border);
 }
 
 .border-left {
-  border-left: 1px solid #1E2D3D;
+  border-left: 1px solid var(--c-border);
 }
 
 /* Scroll bar */
@@ -270,7 +351,7 @@ main.page {
 /* width */
 ::-webkit-scrollbar {
   width: 20px;
-  border-left: 1px solid #1E2D3D;
+  border-left: 1px solid var(--c-border);
   display: none;
 }
 
@@ -281,12 +362,12 @@ main.page {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #607B96;
+  background: var(--c-muted);
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #7B9BBB;
+  background: var(--c-text);
 }
 
 /* Fonts */

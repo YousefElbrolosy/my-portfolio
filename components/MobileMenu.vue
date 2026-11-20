@@ -4,12 +4,15 @@
     <!-- header -->
     <div id="mobile-header" class="w-full h-16 flex justify-between items-center">
       <NuxtLink class="text-menu-text font-fira_retina flex h-full items-center mx-5" to="/" @click="goHome()">
-        {{ config.logoName }}
+        {{ config.logo_name }}
       </NuxtLink>
-      <img src="/icons/burger.svg" alt="Open menu" v-if="!menuOpen" @click="toggleMobileMenu()"
-        class="w-5 h-5 mx-5 my-auto" />
-      <img src="/icons/burger-close.svg" alt="Closed menu" v-else @click="toggleMobileMenu()"
-        name="icon-park-outline:close" class="w-5 h-5 mx-5 my-auto" />
+      <div class="flex h-full items-center">
+        <ThemeToggle />
+        <img src="/icons/burger.svg" alt="Open menu" v-if="!menuOpen" @click="toggleMobileMenu()"
+          class="w-5 h-5 mx-5 my-auto" />
+        <img src="/icons/burger-close.svg" alt="Closed menu" v-else @click="toggleMobileMenu()"
+          name="icon-park-outline:close" class="w-5 h-5 mx-5 my-auto" />
+      </div>
     </div>
 
     <!-- mobile menu -->
@@ -83,15 +86,15 @@ const isActive = (route) => {
 
 <style>
 #mobile-header {
-  border-bottom: 1px solid #1E2D3D;
+  border-bottom: 1px solid var(--c-border);
 }
 
 #nav-link-mobile {
-  border-bottom: 1px solid #1E2D3D;
+  border-bottom: 1px solid var(--c-border);
   @apply text-menu-text font-fira_retina px-6 py-4 flex items-center;
 }
 
 #nav-link-mobile.active {
-  color: white
+  color: var(--c-fg)
 }
 </style>

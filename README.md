@@ -59,8 +59,6 @@ The portfolio template includes some default content, but you can easily customi
 
 * Update the `nuxt.config.ts` file for meta tags of website and some additional config.
 
-* Update the `public/pwa/manifest.json` file for PWA config.
-
 * Change the styling and design of the website to match your personal style.
 
 ## 🚀 Building and Running for Production

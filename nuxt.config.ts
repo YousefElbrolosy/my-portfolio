@@ -20,7 +20,6 @@ export default defineNuxtConfig({
    * pageTransition config: https://nuxt.com/docs/getting-started/transitions#transitions
    * TODO: Add more meta tags for SEO
    * TODO: Add tags for social media sharing
-   * TODO: Migrate apple-touch-icon config to manifest.json
    */
   app: {
     head: {
@@ -39,8 +38,14 @@ export default defineNuxtConfig({
         // ...
       ],
       link: [
-        { rel: 'manifest', href: 'pwa/manifest.json' },
-        { rel: 'apple-touch-icon', href: 'pwa/icons/apple-touch-icon.png' },
+        { rel: 'icon', href: 'data:,' }, // no favicon; also stops browsers using a cached one
+      ],
+      script: [
+        {
+          // Apply the theme before first paint to avoid a dark→light flash (see composables/useTheme.js)
+          innerHTML: `(function(){var t;try{t=localStorage.getItem('theme')}catch(e){}if(t!=='light'&&t!=='dark'){t=window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark'}document.documentElement.setAttribute('data-theme',t)})()`,
+          tagPosition: 'head',
+        },
       ],
     },
   },

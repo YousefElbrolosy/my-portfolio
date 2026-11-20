@@ -1,45 +1,46 @@
-# `content/` [Directory](https://nuxt.com/docs/guide/directory-structure/content)
+# `content/`
 
-The Nuxt Content module reads the `content/` directory in your project and parses .md, .yml, .csv and .json files to create a file-based CMS for your application.
+## Blog posts
 
-1. Render your content with built-in components.
-2. Query your content with a MongoDB-like API.
-3. Use your Vue components in Markdown files with the MDC syntax.
-4. Automatically generate your navigation.
+Each post is a Markdown file in `content/blog/`. The file name becomes the URL:
+`content/blog/my-post.md` → `/blog/my-post`.
 
-## Installation
+Start the file with a front-matter block, then write the post in normal Markdown:
 
-Install the `@nuxt/content` module in your project:
+```md
+---
+title: "My post title"
+date: 2026-01-15
+tags: [Python, Quantum Computing]
+heroImage: /images/blog/my-post/hero.png   # optional
+excerpt: "One or two sentences shown on the blog index card."
+draft: true                                 # optional, hides the post
+---
 
-````
-yarn add --dev @nuxt/content
-````
+## First section
 
-Then, add `@nuxt/content` to the `modules` section of `nuxt.config.ts`.
+A paragraph with **bold**, `inline code` and a [link](https://example.com).
 
-````ts
-export default defineNuxtConfig({
-  modules: [
-    '@nuxt/content'
-  ],
-  content: {
-    // https://content.nuxtjs.org/api/configuration
-  }
-})
+![Caption shown under the image](/images/blog/my-post/diagram.png)
 
-````
+## Second section
 
-## Create Content
+- lists, > quotes, tables and fenced code blocks all work
+```
 
-Place your markdown files inside the `content/` directory in the root directory of your project:
-``content/index.md`
+Notes:
 
-````
-# Hello Content
-````
+- Put images in `public/` and reference them from `/` (e.g. `public/images/x.png` → `/images/x.png`).
+  Files in `assets/` are not served to the browser.
+- To make an image smaller, add a width after the path: `![caption](/images/x.png "width=50%")` or `"width=400"` (pixels).
+  Smaller images are centered. Captions can contain links: `![photo ([source](https://...))](/images/x.png)`.
+- For a diagram that's a PDF, export it to SVG or PNG and use it as an image, e.g.
+  `pdftocairo -svg diagram.pdf public/images/blog/my-post/diagram.svg`
+  (embedded PDFs don't display on most phones). To offer the PDF itself, put it in `public/` and link to it:
+  `[download the PDF](/files/diagram.pdf)`.
+- Use `##` for section headings; the post title comes from the front matter.
+- Quote `title` and `excerpt` if they contain a colon (`:`).
+- Posts are listed newest first by `date` (format `YYYY-MM-DD`).
+- To link a project or spotlight to a post, set its `blogSlug` in `developer.json` to the file name without `.md`.
 
-The module automatically loads and parses them.
-
-## Documentation
-
-Head over to https://content.nuxtjs.org to learn more about the Content module features, such as how to build queries and use Vue components in your Markdown files with the MDC syntax.
+The parsing lives in `utils/blog.js`.

@@ -198,7 +198,7 @@ function handleResize() {
   overflow-x: hidden;
   scroll-behavior: smooth;
   scrollbar-width: thin;
-  scrollbar-color: #1E2D3D #011627;
+  scrollbar-color: var(--c-border) var(--c-bg);
 }
 
 /* Custom scrollbar */
@@ -208,18 +208,18 @@ function handleResize() {
 }
 
 #hello::-webkit-scrollbar-track {
-  background: #011627;
-  border-left: 1px solid #1E2D3D;
+  background: var(--c-bg);
+  border-left: 1px solid var(--c-border);
 }
 
 #hello::-webkit-scrollbar-thumb {
-  background: #1E2D3D;
+  background: var(--c-border);
   border-radius: 6px;
-  border: 2px solid #011627;
+  border: 2px solid var(--c-bg);
 }
 
 #hello::-webkit-scrollbar-thumb:hover {
-  background: #607B96;
+  background: var(--c-muted);
 }
 
 /* HERO VIEWPORT */
@@ -265,14 +265,14 @@ function handleResize() {
 #hello .head span {
   font-size: 18px;
   line-height: 1;
-  color: #E5E9F0;
+  color: var(--c-strong);
   font-family: 'Fira Code Retina';
 }
 
 #hello .head h1 {
   font-size: 58px;
   line-height: 1;
-  color: #E5E9F0;
+  color: var(--c-strong);
   font-family: 'Fira Code Regular';
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -281,7 +281,7 @@ function handleResize() {
 #hello .head h2, #hello .head .diple {
   font-size: 32px;
   line-height: 1;
-  color: #4D5BCE;
+  color: var(--c-blue);
   font-family: 'Fira Code Retina';
 }
 
@@ -297,30 +297,30 @@ function handleResize() {
 #info > span {
   font-size: 14px;
   line-height: 1;
-  color: #8da9c6;
+  color: var(--c-text-2);
   font-family: 'Fira Code Retina';
   padding-bottom: 1rem;
 }
 
 .code {
   font-family: 'Fira Code Medium';
-  color: #E5E9F0;
+  color: var(--c-strong);
 }
 
 .code .identifier {
-  color: #6172ff;
+  color: var(--c-syn-blue);
 }
 
 .code .variable-name {
-  color: #43D9AD;
+  color: var(--c-green);
 }
 
 .code .operator {
-  color: white;
+  color: var(--c-fg);
 }
 
 .code .string {
-  color: #E99287;
+  color: var(--c-coral);
   text-decoration-line: underline;
   text-underline-offset: 4px;
 }
@@ -340,17 +340,17 @@ function handleResize() {
   justify-content: center;
   margin-top: 1rem;
   padding: 0.6rem 1rem;
-  border: 1px solid #43D9AD;
+  border: 1px solid var(--c-green);
   border-radius: 8px;
   font-family: 'Fira Code Retina';
   font-size: 13px;
-  color: #43D9AD;
+  color: var(--c-green);
   text-decoration: none;
   transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 .cv-button:hover {
-  background-color: #43D9AD;
-  color: #011627;
+  background-color: var(--c-green);
+  color: var(--c-on-accent);
   transform: translateY(-1px);
 }
 
@@ -375,14 +375,14 @@ function handleResize() {
 .scroll-text {
   font-family: 'Fira Code Retina';
   font-size: 12px;
-  color: #607B96;
+  color: var(--c-muted);
 }
 
 .scroll-arrow {
   width: 16px;
   height: 16px;
-  border-right: 2px solid #607B96;
-  border-bottom: 2px solid #607B96;
+  border-right: 2px solid var(--c-muted);
+  border-bottom: 2px solid var(--c-muted);
   transform: rotate(45deg);
   animation: bounceArrow 2s ease-in-out infinite;
 }
@@ -401,10 +401,10 @@ function handleResize() {
 .spotlights-section {
   position: relative;
   z-index: 2;
-  background-color: #011627;
+  background-color: var(--c-bg);
   min-height: 100vh;
   padding: 80px 60px 120px;
-  border-top: 1px solid #1E2D3D;
+  border-top: 1px solid var(--c-border);
   flex-shrink: 0;
 }
 
@@ -416,7 +416,7 @@ function handleResize() {
 .spotlights-header .comment-text {
   font-family: 'Fira Code Retina';
   font-size: 14px;
-  color: #607B96;
+  color: var(--c-muted);
   display: block;
   margin-bottom: 0.75rem;
 }
@@ -424,14 +424,14 @@ function handleResize() {
 .spotlights-title {
   font-family: 'Fira Code Bold';
   font-size: 32px;
-  color: #E5E9F0;
+  color: var(--c-strong);
   margin-bottom: 1rem;
 }
 
 .title-line {
   width: 60px;
   height: 2px;
-  background: linear-gradient(90deg, #4D5BCE, #43D9AD);
+  background: linear-gradient(90deg, var(--c-blue), var(--c-green));
   margin: 0 auto;
   border-radius: 1px;
 }
@@ -447,7 +447,7 @@ function handleResize() {
   rotate: 10deg;
   filter: blur(70px);
   background: radial-gradient(circle at 50% 50%,rgba(77, 91, 206, 1), rgba(76, 0, 255, 0));
-  opacity: 0.5;
+  opacity: var(--c-blob-opacity);
   z-index: 10;
   pointer-events: none;
 }
@@ -460,8 +460,8 @@ function handleResize() {
   height: 300px;
   border-radius: 0% 50% 0% 50%;
   filter: blur(70px);
-  background: radial-gradient(circle at 50% 50%,rgba(67, 217, 173, 1), rgba(76, 0, 255, 0));
-  opacity: 0.5;
+  background: radial-gradient(circle at 50% 50%,rgba(var(--c-green-rgb), 1), rgba(76, 0, 255, 0));
+  opacity: var(--c-blob-opacity);
   z-index: 10;
   pointer-events: none;
 }
@@ -469,7 +469,7 @@ function handleResize() {
 /* Typewrite Animation */
 .line-1 {
   width: fit-content;
-  border-right: 3px solid rgba(255,255,255,.75);
+  border-right: 3px solid var(--c-cursor);
   white-space: nowrap;
   overflow: hidden;
   padding-right: 2px;
@@ -486,7 +486,7 @@ function handleResize() {
 }
 
 @keyframes blinkTextCursor {
-  from { border-right-color: rgba(255,255,255,.75); }
+  from { border-right-color: var(--c-cursor); }
   to { border-right-color: transparent; }
 }
 
@@ -509,7 +509,7 @@ function handleResize() {
 
   #hello .head h2, #hello .head .diple {
     font-size: 20px;
-    color: #43D9AD;
+    color: var(--c-green);
   }
 
   #info .action {
@@ -577,7 +577,7 @@ function handleResize() {
     rotate: 10deg;
     width: 400px;
     height: 400px;
-    opacity: 0.5;
+    opacity: var(--c-blob-opacity);
     border-radius: 100% 0% 0% 0%;
     rotate: 20deg;
   }

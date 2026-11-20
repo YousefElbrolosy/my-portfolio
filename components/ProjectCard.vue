@@ -20,14 +20,14 @@
                 {{ project.description }}
                 </p>
                 <div class="project-actions">
-                <a id="view-button" :href="project.url" target="_blank" class="text-white font-fira_retina py-2 px-4 w-fit text-xs rounded-lg">
+                <a id="view-button" :href="project.url" target="_blank" class="text-fg font-fira_retina py-2 px-4 w-fit text-xs rounded-lg">
                     view-project
                 </a>
                 <NuxtLink
                   v-if="blogSlug"
                   :to="`/blog/${blogSlug}`"
                   id="read-blog-button"
-                  class="text-white font-fira_retina py-2 px-4 w-fit text-xs rounded-lg"
+                  class="text-fg font-fira_retina py-2 px-4 w-fit text-xs rounded-lg"
                 >
                   read-blog
                 </NuxtLink>
@@ -39,7 +39,6 @@
 
 <script setup>
 import { computed } from 'vue'
-import DevConfig from '~/developer.json'
 
 const { project, key, index } = defineProps(['project', 'key', 'index'])
 
@@ -49,7 +48,7 @@ const blogSlug = computed(() => {
   }
 
   const title = project?.title
-  if (typeof title === 'string' && title.trim().length > 0 && DevConfig.blog?.[title]) {
+  if (typeof title === 'string' && title.trim().length > 0 && getBlogPost(title)) {
     return title
   }
 
@@ -66,8 +65,8 @@ const blogSlug = computed(() => {
 #project-card {
   display: flex;
   flex-direction: column;
-  border: 1px solid #1E2D3D;
-  background-color: #011221;
+  border: 1px solid var(--c-border);
+  background-color: var(--c-bg-sunken);
   border-radius: 15px;
   max-width: 400px;
   height: 380px;
@@ -113,11 +112,11 @@ const blogSlug = computed(() => {
 }
 
 #read-blog-button {
-  background-color: #263b50;
+  background-color: var(--c-surface-hover);
 }
 
 #read-blog-button:hover {
-  background-color: #33506d;
+  background-color: var(--c-surface-active);
 }
 
 @media (max-width: 768px) {

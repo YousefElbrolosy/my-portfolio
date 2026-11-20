@@ -80,8 +80,13 @@
             },
             "linkedin": {
                 "title": "LinkedIn profile",
-                "url": "https://www.linkedin.com/in/yousefelbrolosy/",
+                "url": "https://www.linkedin.com/in/",
                 "user": "yousefelbrolosy"
+            },
+            "x": {
+                "title": "X profile",
+                "url": "https://x.com/",
+                "user": "brolosyy8"
             }
         },
         "find_me_also_in": {
@@ -113,53 +118,12 @@
             "title": "My Bachelor Project: Feedback GRAPE",
             "tagline": "Machine Learning Based Optimal Quantum Control",
             "description": "Optimal Quantum Control aims to find and engineer the optimal control pulses that drive a quantum system from an initial state to a target state, and fields such as quantum computing rely heavily on quantum control techniques to do operations on qubits and control their behavior.",
-            "img": "/images/projects/feedback-grape/feedback.png",
-            "images": ["/images/projects/feedback-grape/feedback.png", "/images/projects/feedback-grape/feedback.png"],
+            "img": "/images/blog/feedback-grape/rl-control-sequence-hero.webp",
+            "images": ["/images/blog/feedback-grape/rl-control-sequence-hero.webp", "/images/blog/feedback-grape/rl-control-sequence-hero.webp"],
             "tech": ["JAX"],
             "url": "https://github.com/YousefElbrolosy/feedback-grape",
             "gistId": "f75cb279e967c8b142a38cab033dfa34",
             "blogSlug": "feedback-grape"
-        }
-    },
-    "blog": {
-        "feedback-grape": {
-            "title": "Feedback GRAPE: A python library for machine learning based optimal quantum control",
-            "date": "2025-08-04",
-            "tags": ["JAX", "Python", "RNNs", "Quantum Computing"],
-            "heroImage": "/images/projects/feedback-grape/feedback.png",
-            "excerpt": "An Introduction to Feedback GRAPE, a machine learning based extension to the GRAPE algorithm for optimal quantum control, and the python library implementing it.",
-            "sections": [
-                {
-                    "heading": "What is Quantum Optimal Control?",
-                    "content": "<p>Quantum Optimal Control is a field focusing on finding the optimal control pulses that\nwould drive a quantum system from an initial state to a target state. Compared with\nthe classical theory of control, a simple example would be the inverted pendulum on a\nmoving cart. The pendulum starts at a resting position facing downwards (the initial\nstate), and the goal is to find how to move the car’s actuators such that the pendulum\nis balanced in an upright position. There are several different techniques to do that\nfor classical control engineering, like PID controllers, pole placement, or even\nsome machine learning techniques. When trying to control quantum systems, there is\nsimilarity in the objective of driving a system from an initial state to a target state,\nor even in maintaining and stabilizing a certain initial state over time, however\nin quantum optimal control, we try to measure quantum mechanical quantities rather\nthan the classical quantities we are used to in our daily lives. There are many quantum\ncontrol algorithms and their applications lie at the heart of many of the quantum\ntechnologies that are emerging or have emerged in the recent decades, from\ncontrolling quantum information units called qubits and engineering the pulses that\ncontrols and performs operations on them for certain quantum computing platforms, to\nquantum error correction, where the performance and reliability of qubits are improved\n and Nuclear Magnetic Resonance (NMR) applications for which Gradient Ascent\nPulse Engineering Gradient Ascent Pulse Engineering (GRAPE) - one of the main\nalgorithms that we build upon in this thesis - was first introduced.</p>",
-                    "image": null,
-                    "imageCaption": null
-                },
-                {
-                    "heading": "Where does Machine Learning Come Into Play?",
-                    "content": "<p>As suggested by the name GRAPE, it uses gradient ascent in an optimization process to try to maximize a certain quality called fidelity, which specifies how close two quantum states are to each other. However, the novelty of GRAPE lies in its ability to incorporate the quantum-mechanical dynamics of the system in the optimization process; thus, the navigation of the objective function is performed by calculating gradients of the quantum dynamics to try to reach the maximal fidelity. At the time, this was a novel approach and made the algorithm one of the most successful and most used algorithms for optimal quantum control, and is in fact implemented in many software packages such as QuTip and others. Since then, automatic differentiation with frameworks such as PyTorch, TensorFlow, and JAX was primarily used rather than using the analytically derived methods derived in the original paper.</p>",
-                    "image": null,
-                    "imageCaption": null
-                },
-                {
-                    "heading": "A Crucial Extention",
-                    "content": "<p>There has been, however, one crucial extension that was missing from the original GRAPE implementation, which is feedback. Recently, a new approach was presented by Porotti et al. providing this very extension. Feedback GRAPE borrows concepts from Reinforcement Learning (RL) to incorporate the stochastic outcomes of quantum measurements as feedback to help influence the process of searching for the optimal control sequence. There is a set of already existing machine learning techniques for feedback, namely, model-free RL, and there have been several attempts to use model-free RL to find optimal feedback strategies for quantum systems. Those model-free techniques try to discover feedback strategies without taking gradients through quantum dynamics. The authors of the original paper, however, have devised a way to incorporate feedback of quantum measurements into a gradient-based method such as GRAPE, making use of the knowledge of the differentiable quantum dynamics, and essentially creating - using the language of RL - a model-based method. Deep-learning concepts such as Recurrent Neural Networks (RNN) or lookup tables are used in order to maintain memory of previous measurement outcomes to influence the choice of optimizable parameters for the future measurements. This feedback-GRAPE method has proven to lead to significant improvements over model-free methods to incorporate feedback into finding the optimal control pulses for tasks such as state preparation, purification, stabilization, and even for some error correcting tasks.</p>",
-                    "image": null,
-                    "imageCaption": null
-                },
-                {
-                    "heading": "Building the Library",
-                    "content": "<p>We therefore provide a Python framework using JAX’s powerful automatic differentiation, vectorization, and GPU-compatiblity to implement bothGRAPE and feedback-GRAPE in a generic, efficient, and GPU-enabled manner. We illustrate the interface of our package, introduce a new intuitive API for composite systems, and demonstrate the successful results in several state preparation and stabilization tasks.</p>",
-                    "image": null,
-                    "imageCaption": null
-                },
-                {
-                    "heading": "References and Links to thesis",
-                    "content": "<p>Riccardo Porotti, Vittorio Peano, and Florian Marquardt. Gradient-ascent pulse engineering with feedback. PRX Quantum, 4(3):030305, 2023.</p>\n<p>Thesis Link: <a href=\"https://drive.google.com/file/d/1XGPELuWLAKlB5_6CKso5ZBByHw63uth1/view?usp=sharing\"><u>here</u></a></p>",
-                    "image": null,
-                    "imageCaption": null
-                }
-            ]
         }
     },
     "projects": {
@@ -201,7 +165,7 @@
         "6": {
             "title": "feedback-grape",
             "description": "feedback-grape is a high-performance Python package for simulating and optimizing quantum systems with feedback. It builds on the GRAPE (Gradient Ascent Pulse Engineering) method and introduces a new approach that integrates feedback in a natural, differentiable, and efficient way.",
-            "img": "/images/projects/feedback-grape/feedback.png",
+            "img": "/images/blog/feedback-grape/rl-control-sequence-hero.webp",
             "tech": ["JAX", "Python"],
             "url": "https://github.com/YousefElbrolosy/feedback-grape"
         }

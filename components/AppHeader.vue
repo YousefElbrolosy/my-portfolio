@@ -23,9 +23,12 @@
             </NuxtLink>
           </div>
 
-          <NuxtLink id="nav-link-contact" to="/contact-me" :class="{ active: isActive('/contact-me')}">
-            _contact-me
-          </NuxtLink>
+          <div class="flex">
+            <NuxtLink id="nav-link-contact" to="/contact-me" :class="{ active: isActive('/contact-me')}">
+              _contact-me
+            </NuxtLink>
+            <ThemeToggle class="border-left" />
+          </div>
       </nav>
 
     </header>
@@ -51,37 +54,37 @@ export default {
 <style>
 
 #nav-link {
-  border-right: 1px solid #1E2D3D;
+  border-right: 1px solid var(--c-border);
   @apply text-menu-text font-fira_retina px-6 h-full flex items-center;
 }
 
 #nav-link-contact {
-  border-left: 1px solid #1E2D3D;
+  border-left: 1px solid var(--c-border);
   @apply text-menu-text font-fira_retina px-6 h-full flex items-center;
 }
 
 #nav-link:hover, #nav-link-contact:hover {
-  background-color: #1e2d3d74;
-  color: white;
+  background-color: var(--c-hover);
+  color: var(--c-fg);
 }
 
 #nav-logo {
-  border-right: 1px solid #1E2D3D;
+  border-right: 1px solid var(--c-border);
   @apply text-menu-text font-fira_retina px-6 h-full flex items-center;
 }
 
 #nav-logo:hover {
-  background-color: #1e2d3d74;
-  color: white;
+  background-color: var(--c-hover);
+  color: var(--c-fg);
 }
 
 #nav-link.router-link-active, #nav-link-contact.router-link-active {
-  border-bottom: 2px solid #FEA55F;
-  color: white;
+  border-bottom: 2px solid var(--c-orange);
+  color: var(--c-fg);
 }
 
 #nav-logo.router-link-active {
-  border-right: 1px solid #1E2D3D;
+  border-right: 1px solid var(--c-border);
   border-bottom: none;
   @apply text-menu-text;
 }

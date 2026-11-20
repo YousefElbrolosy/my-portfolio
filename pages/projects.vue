@@ -8,7 +8,7 @@
     <!-- section title (mobile) -->
     <div id="section-content-title" class="flex lg:hidden" @click="showFilters = !showFilters">
       <img :class="showFilters ? 'section-arrow rotate-90' : 'section-arrow'" src="/icons/arrow.svg">
-      <span class="font-fira_regular text-white text-sm">projects</span>
+      <span class="font-fira_regular text-fg text-sm">projects</span>
     </div>
 
     <div v-if="showFilters" id="filter-menu"
@@ -16,7 +16,7 @@
       <!-- title -->
       <div id="section-content-title" class="hidden lg:flex items-center min-w-full">
         <img id="section-arrow-menu" src="/icons/arrow.svg" alt="" class="section-arrow mx-3">
-        <p class="font-fira_regular text-white text-sm">projects</p>
+        <p class="font-fira_regular text-fg text-sm">projects</p>
       </div>
 
       <!-- filter menu -->
@@ -45,8 +45,8 @@
 
       <!-- windows tab mobile -->
       <div id="tab" class="flex lg:hidden items-center">
-        <span class="text-white"> // </span>
-        <p class="font-fira_regular text-white text-sm px-3">projects</p>
+        <span class="text-fg"> // </span>
+        <p class="font-fira_regular text-fg text-sm px-3">projects</p>
         <span class="text-menu-text"> / </span>
         <p v-for="filter in filters" :key="filter" class="font-fira_regular text-menu-text text-sm px-3">{{ filter }};
         </p>
@@ -59,7 +59,7 @@
           <span class="flex justify-center text-4xl pb-3">
             X__X
           </span>
-          <span class="text-white flex justify-center text-xl">
+          <span class="text-fg flex justify-center text-xl">
             No matching projects
           </span>
           <span class="flex justify-center">
@@ -135,15 +135,15 @@ function filterProjectsBy(filters) {
 }
 
 #title-tech.active {
-  color: white;
+  color: var(--c-fg);
 }
 
 #view-button {
-  background-color: #1C2B3A;
+  background-color: var(--c-surface);
 }
 
 #view-button:hover {
-  background-color: #263B50;
+  background-color: var(--c-surface-hover);
 }
 
 input[type="checkbox"] {
@@ -164,7 +164,7 @@ input[type="checkbox"]:checked {
 }
 
 input[type="checkbox"]:checked:hover {
-  box-shadow: #607b968b 0px 0px 0px 2px;
+  box-shadow: var(--c-ring) 0px 0px 0px 2px;
 }
 
 input[type="checkbox"]:not(:checked) {
@@ -177,14 +177,14 @@ input[type="checkbox"]:hover {
   background-image: url("data:image/svg+xml;utf8,<svg width='13' height='10' viewBox='0 0 13 10' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M5.38587 7.2802L11.9718 0.693573L12.9856 1.70668L5.38587 9.30641L0.826172 4.74671L1.83928 3.73361L5.38587 7.2802Z' fill='white'/></svg>");
   background-repeat: no-repeat;
   background-position: center;
-  box-shadow: #607b968b 0px 0px 0px 2px;
+  box-shadow: var(--c-ring) 0px 0px 0px 2px;
 }
 
 input[type="checkbox"]:hover:not(:checked) {
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0.1);
   background-image: none;
-  box-shadow: #607b968b 0px 0px 0px 2px;
+  box-shadow: var(--c-ring) 0px 0px 0px 2px;
 }
 
 input[type="checkbox"]:focus {

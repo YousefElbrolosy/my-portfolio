@@ -63,7 +63,7 @@ defineProps({
 .spotlight-number .comment {
   font-family: 'Fira Code Retina';
   font-size: 14px;
-  color: #607B96;
+  color: var(--c-muted);
   margin-bottom: 0.75rem;
   display: block;
 }
@@ -85,10 +85,10 @@ defineProps({
 
 .spotlight-image {
   position: relative;
-  border: 1px solid #1E2D3D;
+  border: 1px solid var(--c-border);
   border-radius: 15px;
   overflow: hidden;
-  background-color: #011221;
+  background-color: var(--c-bg-sunken);
 }
 
 .spotlight-image .main-image {
@@ -121,21 +121,21 @@ defineProps({
 
 .spotlight-title {
   font-family: 'Fira Code Bold';
-  color: #E5E9F0;
+  color: var(--c-strong);
   font-size: 20px;
   margin-bottom: 0.5rem;
 }
 
 .spotlight-tagline {
   font-family: 'Fira Code Retina';
-  color: #4D5BCE;
+  color: var(--c-blue);
   font-size: 14px;
   margin-bottom: 1rem;
 }
 
 .spotlight-desc {
   font-family: 'Fira Code Retina';
-  color: #607B96;
+  color: var(--c-muted);
   font-size: 14px;
   line-height: 1.6;
   margin-bottom: 1.5rem;
@@ -162,14 +162,14 @@ defineProps({
 }
 
 .action-btn.primary {
-  background-color: #FEA55F;
-  color: #010C15;
+  background-color: var(--c-orange);
+  color: var(--c-on-accent);
 }
 
 .action-btn.secondary {
-  background-color: #1C2B3A;
-  color: #FFFFFF;
-  border: 1px solid #1E2D3D;
+  background-color: var(--c-surface);
+  color: var(--c-fg);
+  border: 1px solid var(--c-border);
 }
 
 .spotlight-gist {

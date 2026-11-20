@@ -30,7 +30,7 @@ export default {
 
  .github-corner {
   fill: #071511;
-  color: #43D9AD;
+  color: var(--c-green);
   position: absolute;
   top: 0;
   border: 0;

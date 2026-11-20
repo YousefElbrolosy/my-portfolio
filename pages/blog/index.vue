@@ -17,9 +17,9 @@
       <!-- Blog cards -->
       <div class="blog-grid">
         <NuxtLink
-          v-for="(post, slug) in blog"
-          :key="slug"
-          :to="'/blog/' + slug"
+          v-for="post in posts"
+          :key="post.slug"
+          :to="'/blog/' + post.slug"
           class="blog-card"
           data-aos="fade-up"
         >
@@ -43,10 +43,8 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
-import DevConfig from '~/developer.json'
-
-const blog = ref(DevConfig.blog)
+// posts come from content/blog/*.md (see utils/blog.js)
+const posts = getBlogPosts()
 </script>
 
 <style scoped>
@@ -69,29 +67,29 @@ const blog = ref(DevConfig.blog)
 }
 
 .blog-grid::-webkit-scrollbar-track {
-  background: #011627;
+  background: var(--c-bg);
 }
 
 .blog-grid::-webkit-scrollbar-thumb {
-  background: #1E2D3D;
+  background: var(--c-border);
   border-radius: 4px;
 }
 
 .blog-grid::-webkit-scrollbar-thumb:hover {
-  background: #3A5068;
+  background: var(--c-scroll-hover);
 }
 
 .blog-card {
-  border: 1px solid #1E2D3D;
+  border: 1px solid var(--c-border);
   border-radius: 15px;
-  background-color: #011221;
+  background-color: var(--c-bg-sunken);
   overflow: hidden;
   text-decoration: none;
   transition: border-color 0.2s ease, transform 0.2s ease;
 }
 
 .blog-card:hover {
-  border-color: #607B96;
+  border-color: var(--c-muted);
   transform: translateY(-2px);
 }
 
@@ -121,14 +119,14 @@ const blog = ref(DevConfig.blog)
 .blog-date {
   font-family: 'Fira Code Retina';
   font-size: 12px;
-  color: #607B96;
+  color: var(--c-muted);
 }
 
 .blog-tag {
   font-family: 'Fira Code Retina';
   font-size: 11px;
-  color: #43D9AD;
-  background-color: rgba(67, 217, 173, 0.1);
+  color: var(--c-green);
+  background-color: rgba(var(--c-green-rgb), 0.1);
   padding: 2px 8px;
   border-radius: 4px;
 }
@@ -136,14 +134,14 @@ const blog = ref(DevConfig.blog)
 .blog-card-title {
   font-family: 'Fira Code Bold';
   font-size: 16px;
-  color: #E5E9F0;
+  color: var(--c-strong);
   margin-bottom: 8px;
 }
 
 .blog-card-excerpt {
   font-family: 'Fira Code Retina';
   font-size: 13px;
-  color: #607B96;
+  color: var(--c-muted);
   line-height: 1.5;
   margin-bottom: 16px;
 }
@@ -151,7 +149,7 @@ const blog = ref(DevConfig.blog)
 .blog-read-more {
   font-family: 'Fira Code Retina';
   font-size: 13px;
-  color: #FEA55F;
+  color: var(--c-orange);
 }
 
 @media (max-width: 768px) {

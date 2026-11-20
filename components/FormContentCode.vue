@@ -7,7 +7,7 @@
                 <span class="col-span-1 mr-3">{{ n }}</span>
             </div>
         </div>
-        <div class="font-fira_retina text-white text-container">
+        <div class="font-fira_retina text-fg text-container">
             <p>
                 <span class="tag">
                     const
@@ -142,15 +142,15 @@ export default {
 
 <style>
 .tag {
-    color: #C98BDF;
+    color: var(--c-syn-purple);
 }
 
 .tag-name {
-    color: #819bff;
+    color: var(--c-syn-blue-2);
 }
 
 .arrow {
-    color: #F8F8F8;
+    color: var(--c-fg);
 }
 
 .code-container {

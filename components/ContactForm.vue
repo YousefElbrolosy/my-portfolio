@@ -15,8 +15,8 @@
         <button id="submit-button" type="submit" class="py-2 px-4" :disabled="submitState === 'sending'">
             {{ submitState === 'sending' ? 'sending...' : 'submit-message' }}
         </button>
-        <p v-if="submitState === 'success'" class="mt-3 text-[#43D9AD]">message sent successfully</p>
-        <p v-if="submitState === 'error'" class="mt-3 text-[#E99287]">failed to send message</p>
+        <p v-if="submitState === 'success'" class="mt-3 text-greenfy">message sent successfully</p>
+        <p v-if="submitState === 'error'" class="mt-3 text-codeline-link">failed to send message</p>
     </form>
 </template>
 
@@ -83,8 +83,8 @@ form {
     @apply font-fira_retina text-menu-text
 }
 input {
-    background-color: #011221;
-    border: 2px solid #1E2D3D;
+    background-color: var(--c-bg-sunken);
+    border: 2px solid var(--c-border);
     border-radius: 7px;
     
 }
@@ -98,14 +98,14 @@ textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
-  -webkit-text-fill-color: rgb(190, 190, 190);
+  -webkit-text-fill-color: var(--c-text);
   transition: background-color 5000s ease-in-out 0s;
-  border: 2px solid #607b96;
+  border: 2px solid var(--c-muted);
 }
 
 #message-input {
-    background-color: #011221;
-    border: 2px solid #1E2D3D;
+    background-color: var(--c-bg-sunken);
+    border: 2px solid var(--c-border);
     border-radius: 7px;
     resize: none;
     height: 150px;
@@ -113,22 +113,22 @@ select:-webkit-autofill:focus {
 }
 
 #submit-button {
-    @apply font-fira_retina text-white text-sm;
-    background-color: #1E2D3D;
+    @apply font-fira_retina text-fg text-sm;
+    background-color: var(--c-border);
     border-radius: 7px;
     margin-top: 20px;
     cursor: pointer;
 }
 
 #submit-button:hover {
-    background-color: #263B50;
+    background-color: var(--c-surface-hover);
 }
 
 input:focus, #message-input:focus {
     outline: none;
     transition: none;
-    border: 2px solid #607b96;
-    box-shadow: #607b9669 0px 0px 0px 2px;
+    border: 2px solid var(--c-muted);
+    box-shadow: var(--c-ring-soft) 0px 0px 0px 2px;
   }
 
 #contact-form {

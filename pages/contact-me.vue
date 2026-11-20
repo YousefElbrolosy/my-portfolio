@@ -18,7 +18,7 @@
                 <div id="links">
                     <div v-for="(source, key) in contact.direct.sources" :key="key" class="link">
                         <img :src="'/icons/' + key + '.svg'" alt="">
-                        <a v-html="source" href="/" class="font-fira_retina text-menu-text hover:text-white"></a>
+                        <a v-html="source" href="/" class="font-fira_retina text-menu-text hover:text-fg"></a>
                     </div>
                 </div>
             </div>
@@ -34,7 +34,7 @@
                 <div id="links">
                     <div v-for="(source, key) in contact.find_me_also_in.sources" :key="key" class="link">
                         <img src="/icons/link.svg" alt="">
-                        <a :href="source.url + source.user" class="font-fira_retina text-menu-text hover:text-white" target="_blank">{{ source.title }}</a>
+                        <a :href="source.url + source.user" class="font-fira_retina text-menu-text hover:text-fg" target="_blank">{{ source.title }}</a>
                     </div>
                 </div>
             </div>
@@ -160,7 +160,7 @@ export default {
 
 .submenu .title h3 {
     @apply font-fira_regular;
-    color: white;
+    color: var(--c-fg);
     font-size: 16px;
 }
 
@@ -192,7 +192,7 @@ export default {
     .submenu .title {
         display: flex;
         align-items: center;
-        border-bottom: 1px solid #1E2D3D;
+        border-bottom: 1px solid var(--c-border);
         padding: 0px 25px;
         height: 35px;
         padding: 0px 25px;

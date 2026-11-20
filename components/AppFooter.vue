@@ -10,6 +10,9 @@
                 <NuxtLink :to="social.linkedin.url + social.linkedin.user" target="_blank" class="flex justify-center items-center">
                     <img src="/icons/social/linkedin.svg" alt="linkedin"/>
                 </NuxtLink>
+                <NuxtLink :to="social.x.url + social.x.user" target="_blank" class="flex justify-center items-center">
+                    <img src="/icons/social/x.svg" alt="x"/>
+                </NuxtLink>
                 <NuxtLink :to="social.github.url + social.github.user" target="_blank" class="flex md:hidden justify-center items-center">
                 <img src="/icons/social/github.svg" alt="github"/>
             </NuxtLink>
@@ -50,11 +53,11 @@ footer {
 }
 
 footer a:hover {
-    background-color: #1e2d3d74;
+    background-color: var(--c-hover);
 }
 
 #social-icons > a {
-    border-right: 1px solid #1E2D3D;
+    border-right: 1px solid var(--c-border);
     height: 100%;
     width: 50px;
  }
@@ -85,7 +88,7 @@ footer > a > img {
 
     #social-icons > a {
         border-right: none;
-        border-left: 1px solid #1E2D3D;
+        border-left: 1px solid var(--c-border);
     }
 
     #social-icons > a > img {

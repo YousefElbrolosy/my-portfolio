@@ -8,11 +8,11 @@
     <div id="page-menu" class="w-full flex-col border-right font-fira_regular text-menu-text hidden lg:flex">
       <div id="section-content-title" class="flex items-center min-w-full border-bot">
         <img src="/icons/arrow.svg" class="section-arrow mx-3 open" alt="">
-        <p class="font-fira_regular text-white text-sm">post-info</p>
+        <p class="font-fira_regular text-fg text-sm">post-info</p>
       </div>
       <div class="p-5">
         <p class="text-xs mb-1 text-menu-text">// date</p>
-        <p class="text-white text-sm mb-4 font-fira_retina">{{ post.date }}</p>
+        <p class="text-fg text-sm mb-4 font-fira_retina">{{ post.date }}</p>
 
         <p class="text-xs mb-2 text-menu-text">// tags</p>
         <div class="flex flex-wrap gap-1 mb-6">
@@ -60,20 +60,8 @@
           <span v-for="tag in post.tags" :key="tag" class="post-tag">{{ tag }}</span>
         </div>
 
-      <div
-        v-for="(section, i) in post.sections"
-        :key="i"
-        class="article-section"
-      >
-        <h2 class="section-heading">{{ section.heading }}</h2>
-        <div class="section-content" v-html="section.content"></div>
-        <div v-if="section.image" class="section-image">
-          <img :src="section.image" :alt="section.imageCaption || ''" />
-          <span v-if="section.imageCaption" class="image-caption">
-            // {{ section.imageCaption }}
-          </span>
-        </div>
-      </div>
+        <!-- rendered from content/blog/<slug>.md -->
+        <div class="article-body" v-html="post.html"></div>
 
       </article>
     </div>
@@ -93,12 +81,8 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
-import DevConfig from '~/developer.json'
-
 const route = useRoute()
-const slug = route.params.slug
-const post = ref(DevConfig.blog?.[slug] || null)
+const post = computed(() => getBlogPost(route.params.slug))
 </script>
 
 <style scoped>
@@ -109,7 +93,7 @@ const post = ref(DevConfig.blog?.[slug] || null)
 .back-link {
   font-family: 'Fira Code Retina';
   font-size: 13px;
-  color: #FEA55F;
+  color: var(--c-orange);
   text-decoration: none;
   transition: opacity 0.2s;
 }
@@ -121,8 +105,8 @@ const post = ref(DevConfig.blog?.[slug] || null)
 .post-tag {
   font-family: 'Fira Code Retina';
   font-size: 11px;
-  color: #43D9AD;
-  background-color: rgba(67, 217, 173, 0.1);
+  color: var(--c-green);
+  background-color: rgba(var(--c-green-rgb), 0.1);
   padding: 2px 8px;
   border-radius: 4px;
 }
@@ -140,20 +124,20 @@ const post = ref(DevConfig.blog?.[slug] || null)
 }
 
 .blog-article::-webkit-scrollbar-track {
-  background: #011627;
+  background: var(--c-bg);
 }
 
 .blog-article::-webkit-scrollbar-thumb {
-  background: #1E2D3D;
+  background: var(--c-border);
   border-radius: 4px;
 }
 
 .blog-article::-webkit-scrollbar-thumb:hover {
-  background: #3A5068;
+  background: var(--c-scroll-hover);
 }
 
 .article-hero {
-  border: 1px solid #1E2D3D;
+  border: 1px solid var(--c-border);
   border-radius: 15px;
   overflow: hidden;
   margin-bottom: 2rem;
@@ -169,7 +153,7 @@ const post = ref(DevConfig.blog?.[slug] || null)
 .article-title {
   font-family: 'Fira Code Bold';
   font-size: 28px;
-  color: #E5E9F0;
+  color: var(--c-strong);
   margin-bottom: 1rem;
 }
 
@@ -184,53 +168,144 @@ const post = ref(DevConfig.blog?.[slug] || null)
 .meta-date {
   font-family: 'Fira Code Retina';
   font-size: 12px;
-  color: #607B96;
+  color: var(--c-muted);
 }
 
-.article-section {
-  margin-bottom: 2.5rem;
-}
-
-.section-heading {
-  font-family: 'Fira Code SemiBold';
-  font-size: 20px;
-  color: #E5E9F0;
-  margin-bottom: 1rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid #1E2D3D;
-}
-
-.section-content {
+/* Markdown body (v-html, so styles go through :deep) */
+.article-body {
   font-family: 'Fira Code Retina';
   font-size: 14px;
-  color: #607B96;
+  color: var(--c-muted);
   line-height: 1.7;
 }
 
-.section-content :deep(p) {
+.article-body :deep(h2) {
+  font-family: 'Fira Code SemiBold';
+  font-size: 20px;
+  color: var(--c-strong);
+  margin: 2.5rem 0 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--c-border);
+}
+
+.article-body :deep(h2:first-child) {
+  margin-top: 0;
+}
+
+.article-body :deep(h3) {
+  font-family: 'Fira Code SemiBold';
+  font-size: 16px;
+  color: var(--c-strong);
+  margin: 1.75rem 0 0.75rem;
+}
+
+.article-body :deep(p),
+.article-body :deep(ul),
+.article-body :deep(ol),
+.article-body :deep(blockquote),
+.article-body :deep(pre),
+.article-body :deep(table) {
   margin-bottom: 1rem;
 }
 
-.section-image {
-  margin-top: 1.5rem;
-  border: 1px solid #1E2D3D;
+.article-body :deep(a) {
+  color: var(--c-strong);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.article-body :deep(a:hover) {
+  color: var(--c-green);
+}
+
+.article-body :deep(strong) {
+  color: var(--c-strong);
+}
+
+.article-body :deep(ul) {
+  list-style: disc;
+  padding-left: 1.5rem;
+}
+
+.article-body :deep(ol) {
+  list-style: decimal;
+  padding-left: 1.5rem;
+}
+
+.article-body :deep(li) {
+  margin-bottom: 0.25rem;
+}
+
+.article-body :deep(blockquote) {
+  border-left: 2px solid var(--c-orange);
+  padding-left: 1rem;
+  font-style: italic;
+}
+
+.article-body :deep(code) {
+  font-family: 'Fira Code Regular';
+  font-size: 13px;
+  color: var(--c-green);
+  background-color: rgba(var(--c-green-rgb), 0.1);
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+
+.article-body :deep(pre) {
+  background-color: var(--c-bg-sunken);
+  border: 1px solid var(--c-border);
+  border-radius: 8px;
+  padding: 1rem;
+  overflow-x: auto;
+}
+
+.article-body :deep(pre code) {
+  color: var(--c-strong);
+  background: none;
+  padding: 0;
+}
+
+.article-body :deep(hr) {
+  border: 0;
+  border-top: 1px solid var(--c-border);
+  margin: 2rem 0;
+}
+
+.article-body :deep(table) {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.article-body :deep(th),
+.article-body :deep(td) {
+  border: 1px solid var(--c-border);
+  padding: 6px 10px;
+  text-align: left;
+}
+
+.article-body :deep(th) {
+  color: var(--c-strong);
+}
+
+/* ![caption](/image.png) */
+.article-body :deep(figure) {
+  margin: 1.5rem auto;
+  border: 1px solid var(--c-border);
   border-radius: 12px;
   overflow: hidden;
 }
 
-.section-image img {
+.article-body :deep(figure img) {
   width: 100%;
   display: block;
 }
 
-.image-caption {
-  display: block;
-  font-family: 'Fira Code Retina';
+.article-body :deep(figcaption) {
   font-size: 12px;
-  color: #607B96;
+  color: var(--c-muted);
   padding: 10px 15px;
-  background-color: #011221;
-  border-top: 1px solid #1E2D3D;
+  background-color: var(--c-bg-sunken);
+  border-top: 1px solid var(--c-border);
 }
 
 @media (max-width: 768px) {
@@ -242,7 +317,7 @@ const post = ref(DevConfig.blog?.[slug] || null)
     font-size: 22px;
   }
 
-  .section-heading {
+  .article-body :deep(h2) {
     font-size: 17px;
   }
 }
