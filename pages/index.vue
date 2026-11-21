@@ -24,6 +24,9 @@
               <a class="cv-button" href="https://drive.google.com/uc?export=download&id=1F5_y3S46aG99Rz_pEuPIZ24DG23WVL6R" download>
                 download_cv
               </a>
+              <a class="cv-button" href="https://drive.google.com/uc?export=download&id=1Nru3K5REJVG_bsJk9LwvMQFq9uOGJAAe" download>
+                download_academic_cv
+              </a>
             </div>
           </div>
 
@@ -332,6 +335,13 @@ function handleResize() {
 
 #info .action {
   display: flex;
+}
+
+/* CV download buttons */
+.head .action {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 0.75rem;
 }
 
 .cv-button {

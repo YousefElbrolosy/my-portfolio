@@ -54,6 +54,10 @@
 
       <!-- projects -->
       <div id="projects-case" class="grid grid-cols-1 lg:grid-cols-2 max-w-full h-full overflow-scroll lg:self-center">
+        <h2 id="projects-intro" class="col-span-full font-fira_retina lg:mx-5">
+          Here are some of the recent projects I worked on:
+        </h2>
+
         <div id="not-found"
           class="hidden flex flex-col font-fira_retina text-menu-text my-5 h-full justify-center items-center">
           <span class="flex justify-center text-4xl pb-3">
@@ -136,6 +140,25 @@ function filterProjectsBy(filters) {
 
 #title-tech.active {
   color: var(--c-fg);
+}
+
+#projects-intro {
+  font-size: 16px;
+  color: var(--c-strong);
+  margin-bottom: 2rem;
+}
+
+/* match ProjectCard's side padding so the title lines up with the cards */
+@media (min-width: 768px) {
+  #projects-intro {
+    padding-inline: 5px;
+  }
+}
+
+@media (min-width: 1350px) {
+  #projects-intro {
+    padding-inline: 20px;
+  }
 }
 
 #view-button {

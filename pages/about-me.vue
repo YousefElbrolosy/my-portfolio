@@ -312,11 +312,6 @@ export default {
               description: 'A transformative 5 month journey.',
               image: '/images/mpl.png',
             },
-            {
-              title: 'Cubic Information Systems Internship',
-              description: 'Experience in software development at a production level.',
-              image: '/images/cubic2.png',
-            },
           ],
         },
         'personal-info': {
@@ -340,7 +335,7 @@ export default {
             {
               title: 'Music',
               description: 'Soundcloud: https://soundcloud.com/yousef-premiero',
-              image: '/images/hobbies/guitar.JPG',
+              image: '/images/hobbies/guitar.jpg',
             },
           ],
         },
