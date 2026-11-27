@@ -240,7 +240,7 @@
   }
 
   #about {
-  min-height: stretch;
+  min-height: 100%;
 }
 }
 

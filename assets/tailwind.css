@@ -91,14 +91,13 @@ h3, h2 {
 
 html {
     @apply bg-dark-background;
-    height: stretch;
-    width: stretch;
+    /* viewport height minus the 30px top + bottom margin (works in all browsers, unlike `stretch`) */
+    height: calc(100% - 60px);
     margin: 30px;
 }
 
 body {
-    height: stretch;
-    width: stretch;
+    height: 100%;
 }
 
 main.page {
@@ -156,16 +155,15 @@ main.page {
 
   html {
     margin: 15px;
-    min-height: 100%;
-    height: stretch;
-    width: stretch;
+    min-height: 0;
+    height: calc(100% - 30px);
   }
 
   #__nuxt {
     @apply bg-blue-background flex flex-col;
     justify-content: space-between;
     height: auto;
-    min-height: stretch; /* This allows the page view for mobile to be full height when the content is less than the screen height. */
+    min-height: 100%; /* This allows the page view for mobile to be full height when the content is less than the screen height. */
     width: 100%;
     width: auto;
   }
